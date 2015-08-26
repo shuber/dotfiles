@@ -4,7 +4,7 @@ Built on [homebrew](http://brew.sh/) and thoughtbot's [rcm](https://github.com/t
 
 ## Installation
 
-```
+```bash
 git clone git@github.com:shuber/dotfiles.git ~/.dotfiles
 ~/.dotfiles/.install
 ```
