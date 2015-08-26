@@ -8,10 +8,3 @@ Built on [homebrew](http://brew.sh/) and thoughtbot's [rcm](https://github.com/t
 git clone git@github.com:shuber/dotfiles.git ~/.dotfiles
 ~/.dotfiles/.install
 ```
-
-### Homebrew packages
-
-* rbenv
-* rcm
-* ruby-build
-* zsh
