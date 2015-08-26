@@ -1,24 +1,27 @@
 #!/usr/bin/env bash
 
-echo "Updating dotfiles submodules"
+echo "==> Updating submodules"
 cd `dirname "$0"`
 git submodule init
 git submodule update
 
-echo "Installing homebrew if necessary"
+echo "==> Installing homebrew"
 which brew || ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-echo "Installing rbenv if necessary"
-which rbenv || brew install rbenv
+packages=(ctags curl fzf hub rbenv reattach-to-user-namespace ruby-build tmux zsh)
+for package in "${packages[@]}"; do
+  echo "==> Installing homebrew $package"
+  which $package || brew install $package
+done
 
-echo "Installing ruby-build if necessary"
-which ruby-build || brew install ruby-build
+echo "==> Installing homebrew readline"
+brew list | grep readline > /dev/null || brew install readline
 
-echo "Installing zsh if necessary"
-which zsh || brew install zsh
+echo "==> Installing homebrew the_silver_searcher"
+which ag || brew install the_silver_searcher
 
-echo "Installing rcm if necessary"
+echo "==> Installing homebrew rcm"
 which rcup || (brew tap thoughtbot/formulae && brew install rcm)
 
-echo "Symlinking dotfiles with rcup -v"
+echo "==> Symlinking dotfiles with rcup -v"
 rcup -v
