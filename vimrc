@@ -267,6 +267,7 @@ nmap <C-s> :w<cr>
 
 " Easily edit configuration files
 nmap ,bash :e $HOME/.bashrc<cr>
+nmap ,bun :e $HOME/.vimrc.bundles<cr>
 nmap ,gem :e $HOME/.gemrc<cr>
 nmap ,tmux :e $HOME/.tmux.conf<cr>
 nmap ,vim :e $HOME/.vimrc<cr>
