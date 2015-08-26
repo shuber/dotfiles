@@ -220,11 +220,12 @@ nmap <leader>gsl :GitSessionLoad<cr>
 nmap <leader>gsd :GitSessionDelete<cr>
 
 function! s:fzf_git_branch_handler(branch)
+  let branch = substitute(a:branch, '^\s*\(.\{-}\)\s*$', '\1', '')
   " silent execute! 'GitSessionSave'
-  silent execute '!git checkout ' a:branch
+  silent execute '!git checkout ' branch
   " silent execute! 'GitSessionLoad'
   silent redraw!
-  echo 'Checked out branch '.a:branch
+  echo 'Checked out branch ' . branch
 endfunction
 
 nmap <silent> <Leader>gb :call fzf#run({
