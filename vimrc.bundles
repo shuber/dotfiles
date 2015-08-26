@@ -8,7 +8,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Load plugins
-" Bundle 'vundle'
+Plugin 'VundleVim/Vundle.vim'
 Bundle 'vim-scripts/ctags.vim'
 Bundle 'bling/vim-airline'
 Bundle 'cakebaker/scss-syntax.vim'
