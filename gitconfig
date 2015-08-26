@@ -1,0 +1,41 @@
+[alias]
+  b = branch
+  c = commit -v
+  ca = commit -av
+  co = checkout
+  d = diff
+  dd = diff --cached
+  dl = diff HEAD~1
+  l = log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
+  list = !bash -c 'ssh git@macke-0.inside.einsteinmedical.com list $* 2>/dev/null' -
+  ll = log --stat --abbrev-commit
+  m = merge
+  p = push
+  r = rebase
+  s = status
+  u = pull
+  us = !git pull && git submodule init && git submodule update
+  ur = pull --rebase
+  unstage = checkout HEAD
+[color]
+  ui = true
+  diff = auto
+[core]
+	editor = vim
+  excludesfile = ~/.gitignore
+[github]
+  user = shuber
+[push]
+	default = simple
+[user]
+	name = Sean Huber
+	email = sean@lendinghome.com
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[heroku]
+	account = personal

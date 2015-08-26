@@ -1,0 +1,8 @@
+alias b="bundle"
+alias be="bundle exec"
+alias bi="bundle install --path vendor/bundle --jobs 8"
+alias bs="bundle exec rails server"
+alias bu="bundle update"
+alias rdm="bundle exec rake db:migrate db:test:clone"
+alias s="bin/spring"
+alias v="vagrant"
