@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+echo "Updating dotfiles submodules"
+cd `dirname "$0"`
+git submodule init
+git submodule update
+
+echo "Installing homebrew if necessary"
+which brew || ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+echo "Installing rbenv if necessary"
+which rbenv || brew install rbenv
+
+echo "Installing ruby-build if necessary"
+which ruby-build || brew install ruby-build
+
+echo "Installing zsh if necessary"
+which zsh || brew install zsh
+
+echo "Installing rcm if necessary"
+which rcup || (brew tap thoughtbot/formulae && brew install rcm)
+
+echo "Symlinking dotfiles with rcup -v"
+rcup -v
