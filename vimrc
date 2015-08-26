@@ -209,13 +209,24 @@ nmap <Leader>p mm:set paste<cr>"+p`mJx
 nmap <Leader>d :Dispatch<cr>:e<cr>
 
 " Git mappings
-nmap <Leader>gb :Gblame<cr>
 vmap <Leader>gb :Gblame<cr>
 nmap <Leader>gd :Gdiff<cr>
 nmap <Leader>gp :Dispatch git push<cr>
 nmap <Leader>gs :Gstatus<cr>
 nmap <Leader>gw :Gwrite<cr>
 nmap <Leader>ge :Extradite<cr>
+nmap <leader>gss :GitSessionSave<cr>
+nmap <leader>gsl :GitSessionLoad<cr>
+nmap <leader>gsd :GitSessionDelete<cr>
+
+function! s:fzf_git_branch_handler(branch)
+  execute 'normal! :!git checkout ' a:branch '<cr>'
+endfunction
+
+nmap <silent> <Leader>gb :call fzf#run({
+  \ 'source': 'git branch -a',
+  \ 'sink': function('<sid>fzf_git_branch_handler')
+  \ })<CR>
 
 " Edit a file in the current directory
 nmap <Leader>e :e <C-r>=expand('%:h').'/'<cr>
