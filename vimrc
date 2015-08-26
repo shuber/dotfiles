@@ -220,11 +220,15 @@ nmap <leader>gsl :GitSessionLoad<cr>
 nmap <leader>gsd :GitSessionDelete<cr>
 
 function! s:fzf_git_branch_handler(branch)
-  execute 'normal! :!git checkout ' a:branch '<cr>'
+  " silent execute! 'GitSessionSave'
+  silent execute '!git checkout ' a:branch
+  " silent execute! 'GitSessionLoad'
+  silent redraw!
+  echo 'Checked out branch '.a:branch
 endfunction
 
 nmap <silent> <Leader>gb :call fzf#run({
-  \ 'source': 'git branch -a',
+  \ 'source': 'git branch',
   \ 'sink': function('<sid>fzf_git_branch_handler')
   \ })<CR>
 
