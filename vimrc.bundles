@@ -1,1 +1,84 @@
-/Users/Sean/.homesick/repos/vim/home/.vimrc.bundles
+set nocompatible
+
+" Temporarily turn filetype off for vundle
+filetype off
+
+" Initialize vundle plugin manager
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Load plugins
+" Bundle 'vundle'
+Bundle 'vim-scripts/ctags.vim'
+Bundle 'bling/vim-airline'
+Bundle 'cakebaker/scss-syntax.vim'
+Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+Bundle 'danro/rename.vim'
+Bundle 'danchoi/ri.vim'
+Bundle 'depuracao/vim-rdoc'
+Bundle 'edkolev/promptline.vim'
+Bundle 'edkolev/tmuxline.vim'
+Bundle 'ekalinin/Dockerfile.vim'
+Bundle 'junegunn/fzf'
+Bundle 'elixir-lang/vim-elixir'
+Bundle 'evanmiller/nginx-vim-syntax'
+Bundle 'fatih/vim-go'
+Bundle 'jaxbot/semantic-highlight.vim'
+Bundle 'kana/vim-textobj-entire'
+Bundle 'kana/vim-textobj-user'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'kien/ctrlp.vim'
+Bundle 'int3/vim-extradite'
+Bundle 'ivalkeen/vim-ctrlp-tjump'
+Bundle 'majutsushi/tagbar'
+Bundle 'mattn/gist-vim'
+Bundle 'mattn/webapi-vim'
+Bundle 'mxw/vim-jsx'
+Bundle 'mustache/vim-mustache-handlebars'
+Bundle 'rizzatti/dash.vim'
+Bundle 'rking/ag.vim'
+Bundle 'slim-template/vim-slim'
+Bundle 'suan/vim-instant-markdown'
+Bundle 'scrooloose/syntastic'
+Bundle 'szw/vim-tags'
+Bundle 'tpope/vim-abolish'
+Bundle 'tpope/vim-cucumber'
+Bundle 'tpope/vim-dispatch'
+Bundle 'tpope/vim-eunuch'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-rbenv'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-sensible'
+Bundle 'tpope/vim-speeddating'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-vinegar'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'vim-scripts/dbext.vim'
+Bundle 'vim-scripts/matchit.zip'
+Bundle 'vim-scripts/tComment'
+
+" Ruby
+Bundle 'ecomba/vim-ruby-refactoring'
+Bundle 'jgdavey/vim-blockle'
+Bundle 'nelstrom/vim-textobj-rubyblock'
+Bundle 'rorymckinley/vim-rubyhash'
+Bundle 'thoughtbot/vim-rspec'
+Bundle 'tpope/vim-bundler'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-rails'
+Bundle 'vim-ruby/vim-ruby'
+
+" Source additional files under .vim/overrides
+if isdirectory(expand("~/.vim/overrides"))
+  runtime! ~/.vim/overrides/*.bundles
+endif
+
+" Load .vimrc.bundles.local last for system specific overrides
+if filereadable(expand("~/.vimrc.bundles.local"))
+  source ~/.vimrc.bundles.local
+endif
+
+call vundle#end()
+
+" Re-enable filetype
+filetype on
