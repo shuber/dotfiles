@@ -1,3 +1,2 @@
 ---
-BUNDLE_LOCAL__LENDINGHOME: "$HOME/Code/lendinghome/consumer"
 BUNDLE_DISABLE_LOCAL_BRANCH_CHECK: 'true'
