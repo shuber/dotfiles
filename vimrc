@@ -229,8 +229,8 @@ function! s:fzf_git_branch_handler(branch)
 endfunction
 
 nmap <silent> <Leader>gb :call fzf#run({
-  \ 'source': 'git branch',
-  \ 'sink': function('<sid>fzf_git_branch_handler')
+  \ 'source': 'git branch -a',
+  \ 'sink': function('<sid>fzf_git_branch_handler'),
   \ })<CR>
 
 " Edit a file in the current directory
