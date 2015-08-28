@@ -211,6 +211,8 @@ nmap <Leader>d :Dispatch<cr>:e<cr>
 " Git mappings
 vmap <Leader>gb :Gblame<cr>
 nmap <Leader>gd :Gdiff<cr>
+nmap <Leader>gl :Gbrowse<cr>
+vmap <Leader>gl :Gbrowse<cr>
 nmap <Leader>gp :Dispatch git push<cr>
 nmap <Leader>gs :Gstatus<cr>
 nmap <Leader>gw :Gwrite<cr>
