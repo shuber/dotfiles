@@ -91,6 +91,7 @@ hi diffAdded ctermfg=2
 hi diffNewFile ctermfg=3
 hi diffRemoved ctermfg=1
 hi gitcommitDiff ctermfg=244
+hi CursorLineNR ctermbg=3 ctermfg=0
 
 "===============================================================================
 " Syntax highlighting
