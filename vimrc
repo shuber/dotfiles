@@ -227,19 +227,26 @@ nmap <leader>gss :GitSessionSave<cr>
 nmap <leader>gsl :GitSessionLoad<cr>
 nmap <leader>gsd :GitSessionDelete<cr>
 
-function! s:fzf_git_branch_handler(branch)
-  let branch = substitute(a:branch, '^\s*\(.\{-}\)\s*$', '\1', '')
-  " silent execute! 'GitSessionSave'
-  silent execute '!git checkout ' branch
-  " silent execute! 'GitSessionLoad'
-  silent redraw!
-  echo 'Checked out branch ' . branch
+function! s:git_branch_handler(...)
+  if a:0 > 0
+    let branch = substitute(a:1, '^\s*\(.\{-}\)\s*$', '\1', '')
+    let checkout = 'git checkout '
+    let checkout_old = checkout.branch
+    let checkout_new = checkout.'-b '.branch
+    let checkout_command = '!'.checkout_old.' || '.checkout_new
+    let refresh_tmux_command = '!tmux refresh-client -S'
+    silent! execute checkout_command
+    silent! execute refresh_tmux_command
+    redraw!
+  else
+    call fzf#run({'source': 'git branch -a', 'sink': function('s:git_branch_handler')})
+  endif
 endfunction
 
-nmap <silent> <Leader>gb :call fzf#run({
-  \ 'source': 'git branch -a',
-  \ 'sink': function('<sid>fzf_git_branch_handler'),
-  \ })<CR>
+command! -nargs=? Gbranch :call <sid>git_branch_handler(<f-args>)
+
+nmap <leader>gb :Gbranch<cr>
+nmap <leader>gg :Gbranch -<cr>
 
 " Edit a file in the current directory
 nmap <Leader>e :e <C-r>=expand('%:h').'/'<cr>
