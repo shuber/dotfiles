@@ -215,6 +215,7 @@ nmap <Leader>d :Dispatch<cr>:e<cr>
 " Git mappings
 vmap <Leader>gb :Gblame<cr>
 nmap <Leader>gd :Gdiff<cr>
+nmap <Leader>gh :Extradite<cr>
 nmap <Leader>gl :Gbrowse<cr>
 vmap <Leader>gl :Gbrowse<cr>
 nmap <Leader>gu :Dispatch git pull<cr>
