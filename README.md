@@ -9,6 +9,12 @@ git clone git@github.com:shuber/dotfiles.git ~/.dotfiles
 ~/.dotfiles/.install
 ```
 
+## Editor
+
+![Editor](https://www.dropbox.com/s/e4846hxq04a4qu9/Screenshot%202015-08-29%2014.28.59.png?dl=1)
+
+* iTerm2, Vim, Tmux, ZSH
+
 ## Git
 
 * aliases
