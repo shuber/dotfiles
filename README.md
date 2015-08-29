@@ -60,7 +60,7 @@ git clone git@github.com:shuber/dotfiles.git ~/.dotfiles
 ![Tmux git dirty](https://www.dropbox.com/s/yqsgogc2olkqvqk/Screenshot%202015-08-29%2013.30.00.png?dl=1)
 
 * Integration with [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)
-* [tmux-sensible](https://github.com/tmux-plugins/tmux-sensible) for basic default settings everyone can agree on, very similar to [vim-sensible](https://github.com/tpope/vim-sensible)
+* [tmux-sensible](https://github.com/tmux-plugins/tmux-sensible) for basic default settings everyone can agree on
 * [tmux-resurrect](https://github.com/tmux-plugins/tmux-resurrect) to persist tmux environment across system restarts
 * [tmux-continuum](https://github.com/tmux-plugins/tmux-continuum) to continuously save tmux environment, automatically restore when tmux is started, and autostart tmux when system boots
 * [tmux-git](https://github.com/shuber/tmux-git) to display git information in tmux status line e.g. branch name, additions, deletions, etc
