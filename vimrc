@@ -212,6 +212,14 @@ nmap <Leader>p mm:set paste<cr>"+p`mJx
 " Async commands using vim-dispatch
 nmap <Leader>d :Dispatch<cr>:e<cr>
 
+" Tmux
+function! s:tmux_refresh()
+  silent! execute '!tmux refresh-client -S'
+  redraw!
+endfunction
+
+command! -nargs=0 TmuxRefresh :call <sid>tmux_refresh(<f-args>)
+
 " Git mappings
 vmap <Leader>gb :Gblame<cr>
 nmap <Leader>gd :Gdiff<cr>
@@ -227,23 +235,27 @@ nmap <leader>gss :GitSessionSave<cr>
 nmap <leader>gsl :GitSessionLoad<cr>
 nmap <leader>gsd :GitSessionDelete<cr>
 
-function! s:git_branch_handler(...)
+function! s:git_checkout(unsanitized_branch)
+  let branch = substitute(a:unsanitized_branch, '^\s*\(.\{-}\)\s*$', '\1', '')
+  let checkout = 'git checkout '
+  let checkout_old = checkout.branch
+  let checkout_new = checkout.'-b '.branch
+  let checkout_command = '!'.checkout_old.' || '.checkout_new
+  silent! execute checkout_command
+endfunction
+
+command! -nargs=1 Gcheckout :call <sid>git_checkout(<f-args>)
+
+function! s:git_branch(...)
   if a:0 > 0
-    let branch = substitute(a:1, '^\s*\(.\{-}\)\s*$', '\1', '')
-    let checkout = 'git checkout '
-    let checkout_old = checkout.branch
-    let checkout_new = checkout.'-b '.branch
-    let checkout_command = '!'.checkout_old.' || '.checkout_new
-    let refresh_tmux_command = '!tmux refresh-client -S'
-    silent! execute checkout_command
-    silent! execute refresh_tmux_command
-    redraw!
+    execute 'Gcheckout ' . a:1
+    execute 'TmuxRefresh'
   else
-    call fzf#run({'source': 'git branch -a', 'sink': function('s:git_branch_handler')})
+    call fzf#run({'source': 'git branch -a', 'sink': function('s:git_branch')})
   endif
 endfunction
 
-command! -nargs=? Gbranch :call <sid>git_branch_handler(<f-args>)
+command! -nargs=? Gbranch :call <sid>git_branch(<f-args>)
 
 nmap <leader>gb :Gbranch<cr>
 nmap <leader>gg :Gbranch -<cr>
