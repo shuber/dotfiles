@@ -91,7 +91,9 @@ hi diffAdded ctermfg=2
 hi diffNewFile ctermfg=3
 hi diffRemoved ctermfg=1
 hi gitcommitDiff ctermfg=244
-hi CursorLineNR ctermbg=3 ctermfg=0
+
+hi clear CursorLineNR
+hi CursorLineNR ctermbg=240 ctermfg=3
 
 "===============================================================================
 " Syntax highlighting
@@ -133,8 +135,9 @@ set shiftwidth=2
 set splitright
 set splitbelow
 
-" Use relative line numbering
+" Use both relative and absolute line numbering
 set relativenumber
+set number
 
 " Increase history storage
 set history=10000
