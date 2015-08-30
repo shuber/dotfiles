@@ -70,10 +70,6 @@ git clone git@github.com:shuber/dotfiles.git ~/.dotfiles
 * zsh
 * fzf
 
-## SSH
-
-* list non-standard configs
-
 ## Theme
 
 * [Tomorrow Night](https://github.com/chriskempson/tomorrow-theme) a beautiful color scheme used everywhere
@@ -126,3 +122,8 @@ git clone git@github.com:shuber/dotfiles.git ~/.dotfiles
 ## Zsh
 
 * list custom configs and plugins
+
+## Pending
+
+* https://github.com/Tarrasch/zsh-autoenv
+* https://github.com/direnv/direnv (instead of https://github.com/kennethreitz/autoenv)
