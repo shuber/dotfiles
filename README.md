@@ -25,10 +25,15 @@ git clone git@github.com:shuber/dotfiles.git ~/.dotfiles
 
 ## Git
 
-* aliases
-* configs
-* hub (github)
-* ignores
+* Global [bash alias](https://github.com/shuber/dotfiles/blob/master/shell/aliases/git.sh#L1) `g` for `git`
+* Global [`~/.gitignore`](https://github.com/shuber/dotfiles/blob/master/gitignore) configuration
+* Numerous [git aliases](https://github.com/shuber/dotfiles/blob/master/gitconfig#L1) e.g. `ca` for `commit -av`
+* Integration with GitHub using [`hub`](https://hub.github.com/)
+* Colors enabled for `git` command output
+
+![Git log](https://www.dropbox.com/s/rio9s6xa8nhacqm/Screenshot%202015-08-30%2015.13.22.png?dl=1)
+
+![Git diff](https://www.dropbox.com/s/kckxiwc0bmahzgi/Screenshot%202015-08-30%2015.15.13.png?dl=1)
 
 ## Heroku
 
@@ -42,8 +47,8 @@ git clone git@github.com:shuber/dotfiles.git ~/.dotfiles
 
 ## iTerm2
 
-* theme/colors/settings
-* slightly transparent full screen mode in all spaces with hotkey
+* Tomorrow night colorscheme configuration
+* Slightly transparent full screen mode in all spaces with hotkey
 
 ## Ruby
 
