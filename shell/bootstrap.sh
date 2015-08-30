@@ -1,10 +1,7 @@
-# Loop thru subdirectories and source them
-directories=(profile functions aliases)
-
-for directory in "${directories[@]}"; do
-  for file in ${HOME}/.shell/${directory}/*.sh; do
+for file in ${HOME}/.shell/*.sh; do
+  if [[ ! "$file" =~ "/bootstrap.sh" ]]; then
     if [ -f "$file" ]; then
       . ${file}
     fi
-  done
+  fi
 done

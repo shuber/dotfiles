@@ -29,6 +29,7 @@ git clone git@github.com:shuber/dotfiles.git ~/.dotfiles
 * Global [`~/.gitignore`](https://github.com/shuber/dotfiles/blob/master/gitignore) configuration
 * Numerous [git aliases](https://github.com/shuber/dotfiles/blob/master/gitconfig#L1) e.g. `ca` for `commit -av`
 * Integration with GitHub using [`hub`](https://hub.github.com/)
+* [Git safe](https://github.com/thoughtbot/suspenders/pull/282) `PATH` configuration
 * Colors enabled for `git` command output
 
 ![Git log](https://www.dropbox.com/s/rio9s6xa8nhacqm/Screenshot%202015-08-30%2015.13.22.png?dl=1)

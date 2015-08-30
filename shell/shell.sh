@@ -1,6 +1,11 @@
-alias h="homeshick"
-alias l="ls -la"
+# Use Vim as the default editor
+export EDITOR="vim"
 
+# Display colors in the command line
+export CLICOLOR=1
+
+# Aliases
+alias l="ls -lah"
 alias edit-bash-conf="$EDITOR $HOME/.bashrc"
 alias edit-bash-local="$EDITOR $HOME/.bashrc.local"
 alias edit-zsh-conf="$EDITOR $HOME/.zshrc"

@@ -23,5 +23,5 @@ if [ -n "${ZSH_VERSION}" ]; then
 
   # Add search paths to lookup when trying to cd into a directory
   setopt auto_cd
-  cdpath=($HOME/Code $HOME/EasyPhpDev/phplib $HOME/EasyPhpDev/sites)
+  cdpath=($HOME/Code)
 fi

@@ -5,10 +5,3 @@ source "$HOME/.shell/bootstrap.sh"
 if [ -f "$HOME/.bashrc.local" ]; then
   source "$HOME/.bashrc.local"
 fi
-
-# added by travis gem
-[ -f /Users/shuber/.travis/travis.sh ] && source /Users/shuber/.travis/travis.sh
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
