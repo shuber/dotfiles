@@ -1,6 +1,6 @@
 # [![Sean Huber](https://cloud.githubusercontent.com/assets/2419/6550752/832d9a64-c5ea-11e4-9717-6f9aa6e023b5.png)](https://github.com/shuber) dotfiles
 
-My pride and joy, my home
+My home, my pride and joy, a lifetime of experimentation
 
 ## Dependencies
 
@@ -21,7 +21,7 @@ git clone git@github.com:shuber/dotfiles.git ~/.dotfiles
 * [Vim](http://www.vim.org/) the highly configurable text editor built to enable efficient text editing
 * [Zsh](http://www.zsh.org/) a shell designed for interactive use and powerful scripting
 * [Tmux](https://tmux.github.io/) an incredibly customizable and robust terminal multiplexer
-* [iTerm2](https://www.iterm2.com/) the terminal emulator for osx that does amazing things
+* [iTerm2](https://www.iterm2.com/) the terminal emulator for OS X that does amazing things
 
 ## Git
 
@@ -68,6 +68,37 @@ git clone git@github.com:shuber/dotfiles.git ~/.dotfiles
 ## SSH
 
 * list non-standard configs
+
+## Theme
+
+![Tomorrow Night](https://raw.githubusercontent.com/ChrisKempson/Tomorrow-Theme/master/Images/Tomorrow-Night-Palette.png)
+
+```
+#1d1f21 Background
+#282a2e Current Line
+#373b41 Selection
+#c5c8c6 Foreground
+#969896 Comment
+#cc6666 Red
+#de935f Orange
+#f0c674 Yellow
+#b5bd68 Green
+#8abeb7 Aqua
+#81a2be Blue
+#b294bb Purple
+```
+
+* [Tomorrow Night](https://github.com/chriskempson/tomorrow-theme) a beautiful color scheme used everywhere
+* [Bubblegum](https://github.com/bling/vim-airline/blob/master/autoload/airline/themes/bubblegum.vim) a consistent status line for everything
+
+##### [vim-airline](https://github.com/bling/vim-airline)
+![Vim](https://www.dropbox.com/s/jawhcko1ztpo9yy/Screenshot%202015-08-30%2011.26.32.png?dl=1)
+
+##### [promptline](https://github.com/edkolev/promptline.vim)
+![Shell](https://www.dropbox.com/s/ct3gw516qs4bf8m/Screenshot%202015-08-30%2011.27.01.png?dl=1)
+
+##### [tmuxline](https://github.com/edkolev/tmuxline.vim)
+![Tmux](https://www.dropbox.com/s/es9ko7o4lv179xe/Screenshot%202015-08-30%2011.25.50.png?dl=1)
 
 ## Tmux
 
