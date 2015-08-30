@@ -71,6 +71,9 @@ git clone git@github.com:shuber/dotfiles.git ~/.dotfiles
 
 ## Theme
 
+* [Tomorrow Night](https://github.com/chriskempson/tomorrow-theme) a beautiful color scheme used everywhere
+* [Bubblegum](https://github.com/bling/vim-airline/blob/master/autoload/airline/themes/bubblegum.vim) a consistent status line for everything
+
 ![Tomorrow Night](https://raw.githubusercontent.com/ChrisKempson/Tomorrow-Theme/master/Images/Tomorrow-Night-Palette.png)
 
 ```
@@ -87,9 +90,6 @@ git clone git@github.com:shuber/dotfiles.git ~/.dotfiles
 #81a2be Blue
 #b294bb Purple
 ```
-
-* [Tomorrow Night](https://github.com/chriskempson/tomorrow-theme) a beautiful color scheme used everywhere
-* [Bubblegum](https://github.com/bling/vim-airline/blob/master/autoload/airline/themes/bubblegum.vim) a consistent status line for everything
 
 ##### [vim-airline](https://github.com/bling/vim-airline)
 ![Vim](https://www.dropbox.com/s/jawhcko1ztpo9yy/Screenshot%202015-08-30%2011.26.32.png?dl=1)
