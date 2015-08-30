@@ -1,6 +1,11 @@
 # [![Sean Huber](https://cloud.githubusercontent.com/assets/2419/6550752/832d9a64-c5ea-11e4-9717-6f9aa6e023b5.png)](https://github.com/shuber) dotfiles
 
-Built on [homebrew](http://brew.sh/) and thoughtbot's [rcm](https://github.com/thoughtbot/rcm)
+My pride and joy, my home
+
+## Dependencies
+
+* [homebrew](http://brew.sh/) the missing package manager for OS X
+* thoughtbot's [rcm](https://github.com/thoughtbot/rcm) management suite for dotfiles
 
 ## Installation
 
@@ -13,7 +18,10 @@ git clone git@github.com:shuber/dotfiles.git ~/.dotfiles
 
 ![Editor](https://www.dropbox.com/s/e4846hxq04a4qu9/Screenshot%202015-08-29%2014.28.59.png?dl=1)
 
-* iTerm2, Vim, Tmux, zsh
+* [Vim](http://www.vim.org/) the highly configurable text editor built to enable efficient text editing
+* [Zsh](http://www.zsh.org/) a shell designed for interactive use and powerful scripting
+* [Tmux](https://tmux.github.io/) an incredibly customizable and robust terminal multiplexer
+* [iTerm2](https://www.iterm2.com/) the terminal emulator for osx that does amazing things
 
 ## Git
 
@@ -31,11 +39,11 @@ git clone git@github.com:shuber/dotfiles.git ~/.dotfiles
 ## Homebrew
 
 * list different packages
-* slightly transparent full screen mode in all spaces with hotkey
 
 ## iTerm2
 
 * theme/colors/settings
+* slightly transparent full screen mode in all spaces with hotkey
 
 ## Ruby
 
@@ -79,6 +87,6 @@ git clone git@github.com:shuber/dotfiles.git ~/.dotfiles
 * [vim-sensible](https://github.com/tpope/vim-sensible) for basic default settings everyone can agree on
 * Status line customizations
 
-## ZSH
+## Zsh
 
 * list custom configs and plugins
