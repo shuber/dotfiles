@@ -94,7 +94,7 @@ function __promptline_left_prompt {
   slice_prefix="${a_bg}${sep}${a_fg}${a_bg}${space}" slice_suffix="$space${a_sep_fg}" slice_joiner="${a_fg}${a_bg}${alt_sep}${space}" slice_empty_prefix="${a_fg}${a_bg}${space}"
   [ $is_prompt_empty -eq 1 ] && slice_prefix="$slice_empty_prefix"
   # section "a" slices
-  __promptline_wrapper "$([[ -n ${ZSH_VERSION-} ]] && print %m || printf "%s" \\h)" "$slice_prefix" "$slice_suffix" && { slice_prefix="$slice_joiner"; is_prompt_empty=0; }
+  # __promptline_wrapper "$([[ -n ${ZSH_VERSION-} ]] && print %m || printf "%s" \\h)" "$slice_prefix" "$slice_suffix" && { slice_prefix="$slice_joiner"; is_prompt_empty=0; }
 
   # section "b" header
   slice_prefix="${b_bg}${sep}${b_fg}${b_bg}${space}" slice_suffix="$space${b_sep_fg}" slice_joiner="${b_fg}${b_bg}${alt_sep}${space}" slice_empty_prefix="${b_fg}${b_bg}${space}"
@@ -154,9 +154,12 @@ function __promptline {
   local a_fg="${wrap}38;5;236${end_wrap}"
   local a_bg="${wrap}48;5;150${end_wrap}"
   local a_sep_fg="${wrap}38;5;150${end_wrap}"
-  local b_fg="${wrap}38;5;249${end_wrap}"
-  local b_bg="${wrap}48;5;237${end_wrap}"
-  local b_sep_fg="${wrap}38;5;237${end_wrap}"
+  # local b_fg="${wrap}38;5;249${end_wrap}"
+  # local b_bg="${wrap}48;5;237${end_wrap}"
+  # local b_sep_fg="${wrap}38;5;237${end_wrap}"
+  local b_fg=$a_fg
+  local b_bg=$a_bg
+  local b_sep_fg=$a_sep_fg
   local c_fg="${wrap}38;5;150${end_wrap}"
   local c_bg="${wrap}48;5;238${end_wrap}"
   local c_sep_fg="${wrap}38;5;238${end_wrap}"
