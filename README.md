@@ -123,7 +123,9 @@ git clone git@github.com:shuber/dotfiles.git ~/.dotfiles
 
 ## Zsh
 
-* list custom configs and plugins
+* Integration with the [antigen](https://github.com/zsh-users/antigen) plug-in manager
+* [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+* list custom configs
 
 ## Pending
 

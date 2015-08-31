@@ -7,17 +7,17 @@ git submodule update --init
 echo "==> Installing homebrew"
 which brew || ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-packages=(autoenv ctags curl fzf hub rbenv reattach-to-user-namespace ruby-build tmux zsh)
+packages=(ctags curl fzf hub rbenv reattach-to-user-namespace ruby-build tmux zsh)
 for package in "${packages[@]}"; do
   echo "==> Installing homebrew $package"
   which $package || brew install $package
 done
 
-echo "==> Installing homebrew readline"
-brew list | grep readline > /dev/null || brew install readline
-
-echo "==> Installing homebrew the_silver_searcher"
-which ag || brew install the_silver_searcher
+packages=(autoenv readline the_silver_searcher)
+for package in "${packages[@]}"; do
+  echo "==> Installing homebrew $package"
+  brew list | grep $package > /dev/null || brew install $package
+done
 
 echo "==> Installing homebrew rcm"
 which rcup || (brew tap thoughtbot/formulae && brew install rcm)
