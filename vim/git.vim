@@ -1,27 +1,36 @@
 nmap <leader>ga :Gamend<cr>
 nmap <leader>gb :Gbranch<cr>
-vmap <Leader>gb :Gblame<cr>
-nmap <Leader>gd :Gdiff<cr>
-nmap <Leader>ge :Extradite<cr>
+vmap <leader>gb :Gblame<cr>
+vmap <leader>gb :Gblame<cr>
+nmap <leader>gc :Gadd<cr>:Gcommit<cr>
+nmap <leader>gd :Gdiff<cr>
+nmap <leader>ge :Extradite<cr>
 nmap <leader>gg :Gbranch -<cr>
-nmap <Leader>gh :Extradite<cr>
-nmap <Leader>gl :Gbrowse<cr>
-vmap <Leader>gl :Gbrowse<cr>
-nmap <Leader>gu :Gpull<cr>
-nmap <Leader>gp :Gpush<cr>
-nmap <Leader>gs :Gstatus<cr>
-nmap <Leader>gw :Gwrite<cr>
+nmap <leader>gh :Extradite<cr>
+nmap <leader>gl :Gbrowse<cr>
+vmap <leader>gl :Gbrowse<cr>
+nmap <leader>gu :Gpull<cr>
+nmap <leader>gp :Gpush<cr>
+nmap <leader>gs :Gstatus<cr>
+nmap <leader>gw :Gwrite<cr>
 nmap <leader>gsd :GitSessionDelete<cr>
 nmap <leader>gsl :GitSessionLoad<cr>
 nmap <leader>gss :GitSessionSave<cr>
 nmap <leader>gww :Gwip<cr>
 nmap <leader>gwp :GwipPop<cr>
 
+command! -nargs=? Gadd :call <sid>git_add(<f-args>)
 command! -nargs=0 Gamend :call <sid>git_commit_amend(<f-args>)
 command! -nargs=? Gbranch :call <sid>git_branch(<f-args>)
 command! -nargs=1 Gcheckout :call <sid>git_checkout(<f-args>)
 command! -nargs=? Gwip :call <sid>git_commit_wip(<f-args>)
 command! -nargs=0 GwipPop :call <sid>git_commit_wip_pop(<f-args>)
+
+function! s:git_add(...)
+  let path = a:0 > 0 ? a:1 : '.'
+  silent! execute 'Git add ' path
+  redraw!
+endfunction
 
 function! s:git_branch(...)
   if a:0 > 0

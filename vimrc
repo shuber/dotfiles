@@ -1,118 +1,11 @@
-"===============================================================================
-" Initialization
-"===============================================================================
-
-" Use Vim settings instead of Vi settings
-set nocompatible
-
-"===============================================================================
-" Plugins
-"===============================================================================
-
-" Load vundle to manage plugins
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
-endif
-
-" Set airline (status bar) theme and enable powerline fonts
-let g:airline_theme="bubblegum"
-let g:airline_powerline_fonts=1
-
-" Disable tmuxline auto-theme generation since I've made changes to it
-let g:airline#extensions#tmuxline#enabled = 0
-
-" Custom ignore patterns for the ctrl-p plugin
-let g:ctrlp_custom_ignore = '\v[\/]((\.(git|hg|svn))|(public\/(system|uploads))|tmp|vendor/bundle)$'
-
-" Allow ctrl-p to show hidden files like .env or .ruby-version
-let g:ctrlp_show_hidden = 1
-
-" Let ctrl-p manage tag navigation
-nnoremap <c-]> :CtrlPtjump<cr>
-vnoremap <c-]> :CtrlPtjumpVisual<cr>
-
-" Automatically jump to tag if there is only one result
-let g:ctrlp_tjump_only_silent = 1
-
-" The Silver Searcher - https://github.com/ggreer/the_silver_searcher
-if executable('ag')
-  " Use Ag instead of grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use Ag in CtrlP for listing files since it's faster and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l -g ""'
-
-  " Ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-endif
-
-" Thoughtbot's rspec integration
-let g:rspec_command = "compiler rspec | set makeprg=spring | Make rspec {spec}"
-
-" syntastic
-let g:syntastic_ruby_exec = '~/.rbenv/shims/ruby'
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-","<ion-", "</ion-"]
-
-" Gist
-let g:gist_clip_command = 'pbcopy'
-let g:gist_detect_filetype = 1
-let g:gist_open_browser_after_post = 1
-let g:gist_post_private = 1
-
-" Don't autogenerate ctags
-let g:vim_tags_auto_generate = 0
-
-"===============================================================================
-" Color scheme
-"===============================================================================
-
-" Load a colorscheme from plugins
-colorscheme Tomorrow-Night
-
-" Setting highlight colors for diff mode doesn't seem work since vimdiff overwrites
-" these values when it loads. As a workaround we'll just define the highlight rules
-" with an autocmd that fires after vimdiff is already loaded
-augroup diff
-  autocmd!
-  autocmd FilterWritePost *
-    \ if &diff |
-    \   hi diffAdded ctermfg=2 |
-    \   hi diffNewFile ctermfg=3 |
-    \   hi diffRemoved ctermfg=1 |
-    \   hi gitcommitDiff ctermfg=244 |
-    \   hi DiffChange ctermbg=235 |
-    \   hi DiffDelete ctermbg=234 ctermfg=234 |
-    \   hi DiffAdd ctermbg=235 |
-    \   hi DiffText ctermbg=237 |
-    \ endif
-augroup END
-
-hi diffAdded ctermfg=2
-hi diffNewFile ctermfg=3
-hi diffRemoved ctermfg=1
-hi gitcommitDiff ctermfg=244
-
-hi clear CursorLineNR
-hi CursorLineNR ctermbg=240 ctermfg=3
-
-"===============================================================================
-" Syntax highlighting
-"===============================================================================
-
-augroup filetypes
-  autocmd!
-  autocmd BufNewFile,BufRead .env* set filetype=sh
-  autocmd BufNewFile,BufRead Dockerfile set filetype=dockerfile
-  autocmd BufNewFile,BufRead *.msx let b:jsx_ext_found = 1
-  autocmd BufNewFile,BufRead *.msx set filetype=javascript
-  autocmd BufNewFile,BufRead *.arb set filetype=ruby
-  autocmd BufNewFile,BufRead *.tmux set filetype=tmux
-augroup END
-
-" List all syntax highlighting groups that include the item under the cursor
-map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-  \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-  \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+source ~/.vim/plugins.vim
+source ~/.vim/ctags.vim
+source ~/.vim/ctrlp.vim
+source ~/.vim/git.vim
+source ~/.vim/github.vim
+source ~/.vim/ruby.vim
+source ~/.vim/theme.vim
+source ~/.vim/tmux.vim
 
 "===============================================================================
 " Settings
@@ -152,9 +45,6 @@ set autowrite
 
 " Read/write a file with encryption using `vim -x filename.ext`
 set cryptmethod=blowfish
-
-" Set the path to lookup tags
-set tags=tags
 
 " fzf - fuzzy file finder
 " set rtp+=~/.fzf
@@ -213,23 +103,11 @@ nmap <Leader>p mm:set paste<cr>"+p`mJx
 " Async commands using vim-dispatch
 nmap <Leader>d :Dispatch<cr>:e<cr>
 
-source ~/.vim/git.vim
-source ~/.vim/tmux.vim
-
 " Edit a file in the current directory
 nmap <Leader>e :e <C-r>=expand('%:h').'/'<cr>
 
 " Easily switch between the last two files
 nmap <Leader><Leader> <C-^>
-
-" Run rspec tests
-nmap <Leader>t :call RunCurrentSpecFile()<cr>
-nmap <Leader>s :call RunNearestSpec()<cr>
-nmap <Leader>l :call RunLastSpec()<cr>
-nmap <Leader>a :call RunAllSpecs()<cr>
-
-" Open a rails console
-nmap <Leader>c :Dispatch spring rails console<cr>
 
 " Toggle the quickfix window
 nmap <script> <silent> <Leader>q :call ToggleQuickfixList()<cr>:e<cr>
@@ -272,9 +150,6 @@ nmap ,tmux :e $HOME/.tmux.conf<cr>
 nmap ,vim :e $HOME/.vimrc<cr>
 nmap ,zsh :e $HOME/.zshrc<cr>
 
-" Generate ctags
-nmap ,tags :!ctags -R --languages=ruby --exclude=.git --exclude=log . $(bundle list --paths)<cr>
-
 " Create splits, vertical splits, and tabs
 nmap \s :new<cr>
 nmap \v :vnew<cr>
@@ -302,8 +177,6 @@ nmap <C-l> :tabnext<cr>
 
 " Yank to the end of the line
 nmap Y y$
-
-nmap <leader>el :RExtractLet<cr>
 
 "===============================================================================
 " Visual mode mappings
