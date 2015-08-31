@@ -8,7 +8,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Load plugins
-Plugin 'VundleVim/Vundle.vim'
 Bundle 'vim-scripts/ctags.vim'
 Bundle 'bling/vim-airline'
 Bundle 'cakebaker/scss-syntax.vim'
@@ -62,7 +61,7 @@ Bundle 'tpope/vim-fugitive'
 " Tmux
 Bundle 'keith/tmux.vim'
 Bundle 'edkolev/tmuxline.vim'
-Plugin 'tmux-plugins/vim-tmux-focus-events'
+Bundle 'tmux-plugins/vim-tmux-focus-events'
 
 " Ruby
 Bundle 'ecomba/vim-ruby-refactoring'
