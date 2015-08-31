@@ -106,6 +106,7 @@ augroup filetypes
   autocmd BufNewFile,BufRead *.msx let b:jsx_ext_found = 1
   autocmd BufNewFile,BufRead *.msx set filetype=javascript
   autocmd BufNewFile,BufRead *.arb set filetype=ruby
+  autocmd BufNewFile,BufRead *.tmux set filetype=tmux
 augroup END
 
 " List all syntax highlighting groups that include the item under the cursor
