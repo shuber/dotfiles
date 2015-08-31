@@ -128,8 +128,3 @@ git clone git@github.com:shuber/dotfiles.git ~/.dotfiles
 * [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 * [zsh-autoenv](https://github.com/Tarrasch/zsh-autoenv) to autoload known `.autoenv.zsh` files
 * list custom configs
-
-## Pending
-
-* https://github.com/Tarrasch/zsh-autoenv
-* https://github.com/direnv/direnv (instead of https://github.com/kennethreitz/autoenv)
