@@ -124,7 +124,9 @@ git clone git@github.com:shuber/dotfiles.git ~/.dotfiles
 ## Zsh
 
 * Integration with the [antigen](https://github.com/zsh-users/antigen) plug-in manager
+* [git-extra-commands](https://github.com/unixorn/git-extra-commands)
 * [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+* [zsh-autoenv](https://github.com/Tarrasch/zsh-autoenv) to autoload known `.autoenv.zsh` files
 * list custom configs
 
 ## Pending

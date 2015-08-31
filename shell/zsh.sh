@@ -24,4 +24,6 @@ if [ -n "${ZSH_VERSION}" ]; then
   # Add search paths to lookup when trying to cd into a directory
   setopt auto_cd
   cdpath=($HOME/Code)
+
+  ZSH_HIGHLIGHT_HIGHLIGHTERS+=(brackets pattern)
 fi
