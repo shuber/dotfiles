@@ -44,24 +44,24 @@ git clone git@github.com:shuber/dotfiles.git ~/.dotfiles
 
 ## Homebrew
 
-* autoenv
-* ctags
-* curl
-* fzf
-* hub
-* rbenv
-* rcm
-* readline
-* reattach-to-user-namespace
-* ruby-build
-* the_silver_searcher
-* tmux
-* zsh
+* [autoenv](https://github.com/kennethreitz/autoenv) for project-specific shell environments by automatically sourcing safe `.env` files
+* [ctags](http://ctags.sourceforge.net/index.html) to generate an index file for searching text and language objects quickly and easily
+* [curl](http://curl.haxx.se/) a command-line tool and library for transferring data with URL syntax
+* [fzf](https://github.com/junegunn/fzf) a command-line fuzzy finder written in Go
+* [hub](https://hub.github.com/) a command-line wrapper for git with enhanced GitHub integration
+* [rbenv](https://github.com/sstephenson/rbenv) to manage multiple Ruby versions
+* [rcm](https://github.com/thoughtbot/rcm) thoughtbot's management suite for dotfiles
+* [readline](https://tiswww.case.edu/php/chet/readline/rltop.html) a set of functions that allow users to edit command lines as they are typed in
+* [reattach-to-user-namespace](https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard) to enhance `pbcopy` and `pbpaste` integration with tmux
+* [ruby-build](https://github.com/sstephenson/ruby-build) to compile and install different Ruby versions
+* [the_silver_searcher](https://github.com/ggreer/the_silver_searcher) a code-searching tool similar to ack, but faster
+* [tmux](https://tmux.github.io/) an incredibly customizable and robust terminal multiplexer
+* [vim](http://www.vim.org/) a highly configurable text editor built to enable efficient text editing
+* [zsh](http://www.zsh.org/) a shell designed for interactive use and powerful scripting
 
 ## iTerm2
 
-* Tomorrow night colorscheme configuration
-* Slightly transparent full screen mode in all spaces with hotkey
+* [Tomorrow night](https://github.com/shuber/dotfiles/blob/master/iterm2/Tomorrow%20Night.itermcolors) color scheme
 
 ## Ruby
 
