@@ -8,5 +8,3 @@ setopt nomatch
 if [ -f "$HOME/.zshrc.local" ]; then
   source "$HOME/.zshrc.local"
 fi
-
-source /usr/local/share/zsh/site-functions/git-completion.bash
