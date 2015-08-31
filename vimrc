@@ -227,8 +227,8 @@ nmap <Leader>gd :Gdiff<cr>
 nmap <Leader>gh :Extradite<cr>
 nmap <Leader>gl :Gbrowse<cr>
 vmap <Leader>gl :Gbrowse<cr>
-nmap <Leader>gu :Dispatch git pull<cr>
-nmap <Leader>gp :Dispatch git push<cr>
+nmap <Leader>gu :Gpull<cr>
+nmap <Leader>gp :Gpush<cr>
 nmap <Leader>gs :Gstatus<cr>
 nmap <Leader>gw :Gwrite<cr>
 nmap <Leader>ge :Extradite<cr>
