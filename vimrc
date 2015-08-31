@@ -141,7 +141,7 @@ set relativenumber
 set number
 
 " Increase history storage
-set history=10000
+set history=100000
 
 " UTF-8 Encoding
 set encoding=utf-8

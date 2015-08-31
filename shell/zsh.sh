@@ -2,8 +2,8 @@
 if [ -n "${ZSH_VERSION}" ]; then
   # Increase history storage size and location
   HISTFILE=$HOME/.zsh_history
-  HISTSIZE=10000
-  SAVEHIST=10000
+  HISTSIZE=100000
+  SAVEHIST=100000
 
   # Enable colors
   autoload colors; colors
