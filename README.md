@@ -38,13 +38,25 @@ git clone git@github.com:shuber/dotfiles.git ~/.dotfiles
 
 ## Heroku
 
-* config/integration
-* multiple accounts
+* config/integration - heroku toolbelt
+* [multiple accounts](https://github.com/ddollar/heroku-accounts)
 * aliases
 
 ## Homebrew
 
-* list different packages
+* autoenv
+* ctags
+* curl
+* fzf
+* hub
+* rbenv
+* rcm
+* readline
+* reattach-to-user-namespace
+* ruby-build
+* the_silver_searcher
+* tmux
+* zsh
 
 ## iTerm2
 

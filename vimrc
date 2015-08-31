@@ -236,6 +236,51 @@ nmap <leader>gss :GitSessionSave<cr>
 nmap <leader>gsl :GitSessionLoad<cr>
 nmap <leader>gsd :GitSessionDelete<cr>
 
+nmap <leader>gww :Gwip<cr>
+nmap <leader>gwp :GwipPop<cr>
+
+nmap <leader>ga :Gamend<cr>
+
+function! s:git_commit_amend()
+  silent! execute 'Git add .'
+  silent! execute 'Git commit --amend'
+  redraw!
+endfunction
+
+command! -nargs=0 Gamend :call <sid>git_commit_amend(<f-args>)
+
+function! s:git_commit_wip(...)
+  if a:0 > 0
+    let message = '[WIP] '.a:1
+  else
+    let message = '[WIP]'
+  endif
+
+  let commit = 'Git commit -am '.shellescape(message)
+
+  silent! execute 'Git add .'
+  silent! execute commit
+  redraw!
+
+  echo message
+endfunction
+
+command! -nargs=? Gwip :call <sid>git_commit_wip(<f-args>)
+
+function! s:git_commit_wip_pop()
+  let commit = systemlist('git log -1 --oneline')[0]
+
+  if commit =~ '\[WIP\]'
+    silent! execute 'Git reset --soft HEAD~1'
+    redraw!
+    echo 'Soft reset: '.commit
+  else
+    echo 'No WIP found: '.commit
+  endif
+endfunction
+
+command! -nargs=0 GwipPop :call <sid>git_commit_wip_pop(<f-args>)
+
 function! s:git_checkout(unsanitized_branch)
   let branch = substitute(a:unsanitized_branch, '^\s*\(.\{-}\)\s*$', '\1', '')
   let checkout = 'git checkout '
