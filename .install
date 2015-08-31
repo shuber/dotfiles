@@ -7,7 +7,7 @@ git submodule update --init
 echo "==> Installing homebrew"
 which brew || ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-packages=(ctags curl fzf hub rbenv reattach-to-user-namespace ruby-build tmux zsh)
+packages=(autoenv ctags curl fzf hub rbenv reattach-to-user-namespace ruby-build tmux zsh)
 for package in "${packages[@]}"; do
   echo "==> Installing homebrew $package"
   which $package || brew install $package

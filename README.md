@@ -70,6 +70,7 @@ git clone git@github.com:shuber/dotfiles.git ~/.dotfiles
 * status line customizations
 * zsh
 * fzf
+* [autoenv](https://github.com/kennethreitz/autoenv) to automatically source known `.env` files
 
 ## Theme
 
