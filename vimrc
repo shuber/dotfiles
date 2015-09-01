@@ -1,11 +1,94 @@
-source ~/.vim/plugins.vim
-source ~/.vim/ctags.vim
-source ~/.vim/ctrlp.vim
-source ~/.vim/git.vim
-source ~/.vim/github.vim
-source ~/.vim/ruby.vim
-source ~/.vim/theme.vim
-source ~/.vim/tmux.vim
+"===============================================================================
+" Plugins
+"===============================================================================
+
+" Use vim settings instead of vi settings
+set nocompatible
+
+" Temporarily turn filetype off for vundle
+filetype off
+
+" Initialize vundle plugin manager
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Configure plugins
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'vim-scripts/ctags.vim'
+Plugin 'danro/rename.vim'
+Plugin 'danchoi/ri.vim'
+Plugin 'depuracao/vim-rdoc'
+Plugin 'junegunn/fzf'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'kana/vim-textobj-entire'
+Plugin 'kana/vim-textobj-user'
+Plugin 'kien/ctrlp.vim'
+Plugin 'ivalkeen/vim-ctrlp-tjump'
+Plugin 'majutsushi/tagbar'
+Plugin 'mattn/webapi-vim'
+Plugin 'rizzatti/dash.vim'
+Plugin 'rking/ag.vim'
+Plugin 'szw/vim-tags'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-cucumber'
+Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-rbenv'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-speeddating'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-vinegar'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'vim-scripts/dbext.vim'
+Plugin 'vim-scripts/matchit.zip'
+Plugin 'vim-scripts/tComment'
+
+" Git
+Plugin 'mattn/gist-vim'
+Plugin 'wting/gitsessions.vim'
+Plugin 'int3/vim-extradite'
+Plugin 'tpope/vim-fugitive'
+
+" Syntax
+Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'evanmiller/nginx-vim-syntax'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'jaxbot/semantic-highlight.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'fatih/vim-go'
+Plugin 'suan/vim-instant-markdown'
+Plugin 'mxw/vim-jsx'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'slim-template/vim-slim'
+
+" Theme
+Plugin 'edkolev/promptline.vim'
+Plugin 'edkolev/tmuxline.vim'
+Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+Plugin 'bling/vim-airline'
+
+" Tmux
+Plugin 'keith/tmux.vim'
+Plugin 'tmux-plugins/vim-tmux-focus-events'
+
+" Ruby
+Plugin 'ecomba/vim-ruby-refactoring'
+Plugin 'jgdavey/vim-blockle'
+Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'rorymckinley/vim-rubyhash'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-rails'
+Plugin 'vim-ruby/vim-ruby'
+
+" Load plugins
+call vundle#end()
+
+" Re-enable filetype
+filetype on
 
 "===============================================================================
 " Settings
@@ -55,36 +138,6 @@ let g:extradite_diff_split = 'vert split'
 
 " Vertically split the dbext window
 let g:dbext_default_window_use_horiz = 0
-
-"===============================================================================
-" Functions
-"===============================================================================
-
-function! s:GetBufferList()
-  redir => buflist
-  silent! ls
-  redir END
-  return buflist
-endfunction
-
-" Toggle the quickfix window (:copen and :cclose)
-function! ToggleQuickfixList()
-  for bufnum in map(filter(split(s:GetBufferList(), '\n'), 'v:val =~ "Quickfix List"'), 'str2nr(matchstr(v:val, "\\d\\+"))')
-    if bufwinnr(bufnum) != -1
-      cclose
-      return
-    endif
-  endfor
-  let winnr = winnr()
-  if exists("g:toggle_list_copen_command")
-    exec(g:toggle_list_copen_command)
-  else
-    copen
-  endif
-  if winnr() != winnr
-    wincmd p
-  endif
-endfunction
 
 "===============================================================================
 " Leader Mappings
@@ -188,17 +241,3 @@ vmap <C-c> <esc>
 " Move visual block
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
-
-"===============================================================================
-" Configuration overrides
-"===============================================================================
-
-" Source additional files under .vim/overrides (.vim/plugin is loaded earlier)
-if isdirectory(expand("~/.vim/overrides"))
-  runtime! ~/.vim/overrides/*.vim
-endif
-
-" Load .vimrc.local last for system specific overrides
-if filereadable(expand("~/.vimrc.local"))
-  source ~/.vimrc.local
-endif
