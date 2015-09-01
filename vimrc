@@ -33,7 +33,9 @@ Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-cucumber'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-eunuch'
+Plugin 'xolox/vim-misc'
 Plugin 'tpope/vim-rbenv'
+Plugin 'xolox/vim-reload'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-speeddating'
@@ -138,6 +140,9 @@ let g:extradite_diff_split = 'vert split'
 
 " Vertically split the dbext window
 let g:dbext_default_window_use_horiz = 0
+
+" Disable vim instant markdown in favor of :InstantMarkdownPreview
+let g:instant_markdown_autostart = 0
 
 "===============================================================================
 " Leader Mappings

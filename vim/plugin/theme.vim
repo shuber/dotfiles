@@ -12,6 +12,11 @@ hi diffAdded ctermfg=2
 hi diffNewFile ctermfg=3
 hi diffRemoved ctermfg=1
 hi gitcommitDiff ctermfg=244
+hi Title ctermfg=3
+hi markdownCode ctermfg=1
+hi markdownLinkText ctermfg=4
+hi markdownListMarker ctermfg=2
+hi markdownUrl ctermbg=236 ctermfg=242
 
 " Setting highlight colors for diff mode doesn't seem work
 " since vimdiff overwrites these values when it loads. As a
