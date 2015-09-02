@@ -4,8 +4,8 @@ My home, my pride and joy, a lifetime of experimentation
 
 ## Dependencies
 
-* [homebrew](http://brew.sh/) the missing package manager for OS X
 * thoughtbot's [rcm](https://github.com/thoughtbot/rcm) management suite for dotfiles
+* (optional) [homebrew](http://brew.sh/) the missing package manager for OS X
 
 ## Installation
 
