@@ -1,6 +1,6 @@
 set rtp+=/usr/local/Cellar/fzf/0.10.2
 
-nmap <leader>f :FZF<cr>
+nmap <leader>f :FZF! -x<cr>
 
 function! s:buflist()
   redir => ls
