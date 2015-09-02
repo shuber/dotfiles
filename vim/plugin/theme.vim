@@ -1,5 +1,9 @@
 colorscheme Tomorrow-Night
 
+" Use both relative and absolute line numbering
+set relativenumber
+set number
+
 let g:airline_theme="bubblegum"
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tmuxline#enabled=0

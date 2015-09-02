@@ -112,10 +112,6 @@ set shiftwidth=2
 set splitright
 set splitbelow
 
-" Use both relative and absolute line numbering
-set relativenumber
-set number
-
 " Increase history storage
 set history=10000
 
@@ -128,10 +124,6 @@ set autowrite
 
 " Read/write a file with encryption using `vim -x filename.ext`
 set cryptmethod=blowfish
-
-" fzf - fuzzy file finder
-" set rtp+=~/.fzf
-set rtp+=/usr/local/Cellar/fzf/0.10.2
 
 " Vertically split the diff window
 let g:extradite_diff_split = 'vert split'
@@ -167,9 +159,6 @@ nmap <Leader><Leader> <C-^>
 
 " Toggle the quickfix window
 nmap <script> <silent> <Leader>q :call ToggleQuickfixList()<cr>:e<cr>
-
-" FZF search/completion
-nmap <leader>f :FZF<cr>
 
 " SQL
 nmap <Leader>see vae<leader>se<c-o><c-w>=zz
