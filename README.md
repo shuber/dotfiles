@@ -140,3 +140,7 @@ git clone git@github.com:shuber/dotfiles.git ~/.dotfiles
 * [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 * [zsh-autoenv](https://github.com/Tarrasch/zsh-autoenv) to autoload known `.autoenv.zsh` files
 * list custom configs
+
+## Potential experiments
+
+* https://github.com/Shougo/unite.vim
