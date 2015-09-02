@@ -8,10 +8,7 @@ colorscheme Tomorrow-Night
 
 hi clear CursorLineNR
 hi CursorLineNR ctermbg=240 ctermfg=3
-hi diffAdded ctermfg=2
-hi diffNewFile ctermfg=3
-hi diffRemoved ctermfg=1
-hi gitcommitDiff ctermfg=244
+
 hi Title ctermfg=3
 hi markdownCode ctermfg=1
 hi markdownLinkText ctermfg=4
@@ -24,20 +21,19 @@ hi markdownUrl ctermbg=236 ctermfg=242
 " autocmd that fires after vimdiff is already loaded
 augroup diff
   autocmd!
-  autocmd FilterWritePost *
+  autocmd FilterWritePre *
     \ if &diff |
-    \   hi diffAdded ctermfg=2 |
-    \   hi diffNewFile ctermfg=3 |
-    \   hi diffRemoved ctermfg=1 |
-    \   hi gitcommitDiff ctermfg=244 |
-    \   hi DiffChange ctermbg=235 |
-    \   hi DiffDelete ctermbg=234 ctermfg=234 |
-    \   hi DiffAdd ctermbg=235 |
-    \   hi DiffText ctermbg=237 |
+    \   setlocal syntax=unknown |
+    \   hi! Normal ctermfg=237 |
     \ endif
 augroup END
 
-" Syntax highlighting
+hi DiffAdd ctermbg=235 ctermfg=2
+hi DiffChange ctermbg=235 ctermfg=238
+hi DiffDelete ctermbg=235 ctermfg=1
+hi DiffText ctermbg=235 ctermfg=244
+
+" Syntax highlight
 augroup filetypes
   autocmd!
   autocmd BufNewFile,BufRead .env* set filetype=sh
