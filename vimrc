@@ -135,6 +135,10 @@ let g:dbext_default_window_use_horiz = 0
 " Disable vim instant markdown in favor of :InstantMarkdownPreview
 let g:instant_markdown_autostart = 0
 
+" Highlight current line number
+hi clear CursorLineNR
+hi CursorLineNR ctermbg=240 ctermfg=3
+
 "===============================================================================
 " Leader Mappings
 "===============================================================================
