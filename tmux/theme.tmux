@@ -7,6 +7,7 @@ set -g pane-border-fg "colour237"
 set -g status "on"
 set -g status-attr "none"
 set -g status-bg "colour237"
+set -g status-interval 1
 set -g status-justify "left"
 set -g status-left-attr "none"
 set -g status-left-length "100"
@@ -23,13 +24,8 @@ setw -g window-status-fg "colour150"
 setw -g window-status-separator ""
 
 set -g status-left "#[fg=colour236,bg=colour150] #h  #S #[fg=colour150,bg=colour237,nobold,nounderscore,noitalics]"
-set -g status-right "#[fg=colour249,bg=colour237] %Y-%m-%d  %I:%M #[fg=colour150,bg=colour237,nobold,nounderscore,noitalics]#[fg=colour236,bg=colour150] #{git_branch} #()"
+
+set -g status-right "#[fg=colour243]#{git_subject} #{status_right} #()"
 
 setw -g window-status-current-format "#[fg=colour238,bg=colour150,nobold,nounderscore,noitalics]#[fg=colour236,bg=colour150] #I #[fg=colour236,bg=colour150] #W #[fg=colour150,bg=colour237,nobold,nounderscore,noitalics]"
 setw -g window-status-format "#[fg=colour249,bg=colour237] #I #[fg=colour249,bg=colour237] #W "
-
-# only red and green
-# set -g status-right "#[fg=colour249,bg=colour237] %Y-%m-%d  %I:%M #[fg=colour4,bg=colour237,nobold,nounderscore,noitalics]#[fg=colour150,bg=colour237,nobold,nounderscore,noitalics]#[fg=colour236,bg=colour150] 18 #[fg=colour236,bg=colour150] + #[fg=colour237,bg=colour150,nobold,nounderscore,noitalics]#[fg=colour131,bg=colour237,nobold,nounderscore,noitalics]#[fg=colour236,bg=colour131] 37 #[fg=colour236,bg=colour131] - #[fg=colour237,bg=colour131,nobold,nounderscore,noitalics]#[fg=colour3,bg=colour237,nobold,nounderscore,noitalics]#[fg=colour236,bg=colour3] #{git_branch}#[fg=colour3,bg=colour3] #()"
-
-# red green and blue
-# set -g status-right "#[fg=colour249,bg=colour237] %Y-%m-%d  %I:%M #[fg=colour4,bg=colour237,nobold,nounderscore,noitalics]#[fg=colour236,bg=colour4] 6 #[fg=colour236,bg=colour4] ± #[fg=colour237,bg=colour4,nobold,nounderscore,noitalics]#[fg=colour150,bg=colour237,nobold,nounderscore,noitalics]#[fg=colour236,bg=colour150] 18 #[fg=colour236,bg=colour150] + #[fg=colour237,bg=colour150,nobold,nounderscore,noitalics]#[fg=colour131,bg=colour237,nobold,nounderscore,noitalics]#[fg=colour236,bg=colour131] 37 #[fg=colour236,bg=colour131] - #[fg=colour237,bg=colour131,nobold,nounderscore,noitalics]#[fg=colour3,bg=colour237,nobold,nounderscore,noitalics]#[fg=colour236,bg=colour3] #{git_branch}#[fg=colour3,bg=colour3]"
