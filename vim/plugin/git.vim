@@ -2,7 +2,7 @@ nmap <leader>ga :Gamend<cr>
 nmap <leader>gb :Gbranch<cr>
 vmap <leader>gb :Gblame<cr>
 vmap <leader>gb :Gblame<cr>
-nmap <leader>gc :Gadd<cr>:Gcommit<cr>
+nmap <leader>gc :Gcommit -v<cr>
 nmap <leader>gd :Gdiff<cr>
 nmap <leader>ge :Extradite<cr>
 nmap <leader>gg :Gbranch -<cr>
