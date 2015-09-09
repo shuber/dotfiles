@@ -10,7 +10,7 @@ nmap <leader>gh :Extradite<cr>
 nmap <leader>gl :Gbrowse<cr>
 vmap <leader>gl :Gbrowse<cr>
 nmap <leader>gu :Gpull<cr>
-nmap <leader>gp :Gpush<cr>
+nmap <leader>gp :Gpush<cr>:TmuxRefresh<cr>
 nmap <leader>gs :Gstatus<cr>
 nmap <leader>gw :Gwrite<cr>
 nmap <leader>gsd :GitSessionDelete<cr>
