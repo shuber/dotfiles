@@ -1,5 +1,7 @@
 gem-ctags
 bundler
 pry
+rubocop
+rubocop-git
 spring
 spring-commands-rspec
