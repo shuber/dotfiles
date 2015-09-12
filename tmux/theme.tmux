@@ -12,7 +12,7 @@ set -g status-justify "left"
 set -g status-left-attr "none"
 set -g status-left-length "100"
 set -g status-right-attr "none"
-set -g status-right-length "100"
+set -g status-right-length "200"
 set -g status-utf8 "on"
 
 setw -g window-status-activity-attr "none"

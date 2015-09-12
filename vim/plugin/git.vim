@@ -1,14 +1,13 @@
 nmap <leader>ga :Gamend<cr>
+nmap <leader>gaa :Gadd<cr>:Gcommit --amend --no-edit<cr>:TmuxRefresh<cr>
 nmap <leader>gb :Gbranch<cr>
-vmap <leader>gb :Gblame<cr>
-vmap <leader>gb :Gblame<cr>
 nmap <leader>gc :Gcommit -v<cr>
 nmap <leader>gd :Gdiff<cr>
 nmap <leader>ge :Extradite<cr>
+nmap <leader>gfp :Gpush --force<cr>:TmuxRefresh<cr>
 nmap <leader>gg :Gbranch -<cr>
 nmap <leader>gh :Extradite<cr>
 nmap <leader>gl :Gbrowse<cr>
-vmap <leader>gl :Gbrowse<cr>
 nmap <leader>gu :Gpull<cr>
 nmap <leader>gp :Gpush<cr>:TmuxRefresh<cr>
 nmap <leader>gs :Gstatus<cr>
@@ -18,6 +17,9 @@ nmap <leader>gsl :GitSessionLoad<cr>
 nmap <leader>gss :GitSessionSave<cr>
 nmap <leader>gww :Gwip<cr>
 nmap <leader>gwp :GwipPop<cr>
+
+vmap <leader>gb :Gblame<cr>
+vmap <leader>gl :Gbrowse<cr>
 
 command! -nargs=? Gadd :call <sid>git_add(<f-args>)
 command! -nargs=0 Gamend :call <sid>git_commit_amend(<f-args>)
