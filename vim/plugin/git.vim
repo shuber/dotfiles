@@ -79,6 +79,7 @@ function! s:git_commit_wip_pop()
 
   if commit =~ '\[WIP\]'
     silent! execute 'Git reset --soft HEAD~1'
+    silent! execute 'Git reset'
     redraw!
     echo 'Soft reset: '.commit
   else
