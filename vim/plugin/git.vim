@@ -25,6 +25,9 @@ command! -nargs=? Gadd :call <sid>git_add(<f-args>)
 command! -nargs=0 Gamend :call <sid>git_commit_amend(<f-args>)
 command! -nargs=? Gbranch :call <sid>git_branch(<f-args>)
 command! -nargs=1 Gcheckout :call <sid>git_checkout(<f-args>)
+command! -nargs=0 Gstash :call <sid>git_stash(<f-args>)
+command! -nargs=0 GstashApply :call <sid>git_stash_apply(<f-args>)
+command! -nargs=0 GstashPop :call <sid>git_stash_pop(<f-args>)
 command! -nargs=? Gwip :call <sid>git_commit_wip(<f-args>)
 command! -nargs=0 GwipPop :call <sid>git_commit_wip_pop(<f-args>)
 
@@ -37,12 +40,15 @@ endfunction
 function! s:git_branch(...)
   if a:0 > 0
     let branch = split(a:1, '\n')[-1]
+    execute 'Gstash'
+    execute 'GstashApply'
     execute 'Gwip Session'
     execute 'MakeSession'
     execute 'bufdo bd'
     execute 'Gcheckout ' . branch
     execute 'LoadSession'
     execute 'GwipPop'
+    execute 'GstashPop'
     execute 'TmuxRefresh'
   else
     call fzf#run({
@@ -95,4 +101,30 @@ function! s:git_commit_wip_pop()
   else
     echo 'No WIP found: '.commit
   endif
+endfunction
+
+function! s:git_stash()
+  let b:stash = s:git_stash_name()
+  silent! execute 'Git stash save ' . b:stash
+endfunction
+
+function! s:git_stash_apply()
+  let b:reference = s:git_stash_reference()
+  silent! execute 'Git stash apply ' . b:reference
+endfunction
+
+function! s:git_stash_name()
+  let b:session_file = SessionFile()
+  return substitute(b:session_file, '\W', '_', 'g')
+endfunction
+
+function! s:git_stash_pop()
+  let b:reference = s:git_stash_reference()
+  silent! execute 'Git stash apply --index ' . b:reference
+  silent! execute 'Git stash drop ' . b:reference
+endfunction
+
+function! s:git_stash_reference()
+  let b:stash = s:git_stash_name()
+  return systemlist('git stash list | grep ' . b:stash . ' | cut -d ":" -f1')[0]
 endfunction
