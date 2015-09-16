@@ -1,4 +1,4 @@
-nmap <leader>ga :Gamend<cr>
+nmap <leader>gam :Gamend<cr>
 nmap <leader>gaa :Gadd<cr>:Gcommit --amend --no-edit<cr>:TmuxRefresh<cr>
 nmap <leader>gb :Gbranch<cr>
 nmap <leader>gc :Gcommit -v<cr>
