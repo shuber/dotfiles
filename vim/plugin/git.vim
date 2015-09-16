@@ -36,15 +36,20 @@ endfunction
 
 function! s:git_branch(...)
   if a:0 > 0
+    let branch = split(a:1, '\n')[-1]
     execute 'Gwip Session'
     execute 'MakeSession'
     execute 'bufdo bd'
-    execute 'Gcheckout ' . a:1
+    execute 'Gcheckout ' . branch
     execute 'LoadSession'
     execute 'GwipPop'
     execute 'TmuxRefresh'
   else
-    call fzf#run({'source': 'git branch -a', 'sink': function('s:git_branch')})
+    call fzf#run({
+    \ 'options': '--print-query',
+    \ 'source': 'git branch -a',
+    \ 'sink': function('s:git_branch')
+    \ })
   endif
 endfunction
 
