@@ -36,7 +36,12 @@ endfunction
 
 function! s:git_branch(...)
   if a:0 > 0
+    execute 'Gwip Session'
+    execute 'MakeSession'
+    execute 'bufdo bd'
     execute 'Gcheckout ' . a:1
+    execute 'LoadSession'
+    execute 'GwipPop'
     execute 'TmuxRefresh'
   else
     call fzf#run({'source': 'git branch -a', 'sink': function('s:git_branch')})

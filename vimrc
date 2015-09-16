@@ -48,7 +48,6 @@ Plugin 'vim-scripts/tComment'
 
 " Git
 Plugin 'mattn/gist-vim'
-Plugin 'wting/gitsessions.vim'
 Plugin 'int3/vim-extradite'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
