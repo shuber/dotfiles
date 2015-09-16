@@ -3,13 +3,13 @@ command! -nargs=0 MakeSession :call MakeSession(<f-args>)
 command! -nargs=0 SessionFile :echom SessionFile(<f-args>)
 
 function! MakeSession()
-  let b:session_file = s:session_file()
+  let b:session_file = SessionFile()
   exe 'mksession! ' . b:session_file
   echo 'Saved session ' b:session_file
 endfunction
 
 function! LoadSession()
-  let b:session_file = s:session_file()
+  let b:session_file = SessionFile()
 
   if (filereadable(b:session_file))
     exec 'source ' b:session_file
