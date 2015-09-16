@@ -25,5 +25,8 @@ if [ -n "${ZSH_VERSION}" ]; then
   setopt auto_cd
   cdpath=($HOME/Code)
 
+  # Vi mode
+  bindkey -v
+
   ZSH_HIGHLIGHT_HIGHLIGHTERS+=(brackets pattern)
 fi
