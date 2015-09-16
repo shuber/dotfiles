@@ -1,3 +1,5 @@
+set sessionoptions=blank,buffers,curdir,folds,globals,help,localoptions,options,resize,tabpages,winsize,winpos
+
 command! -nargs=0 LoadSession :call LoadSession(<f-args>)
 command! -nargs=0 MakeSession :call MakeSession(<f-args>)
 command! -nargs=0 SessionFile :echom SessionFile(<f-args>)
