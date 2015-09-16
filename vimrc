@@ -125,6 +125,10 @@ scriptencoding utf-8
 " Automatically :write before running commands
 set autowrite
 
+" Don't draw changes unless necessary
+set lazyredraw
+set ttyfast
+
 " Read/write a file with encryption using `vim -x filename.ext`
 set cryptmethod=blowfish
 
