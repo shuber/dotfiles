@@ -40,15 +40,15 @@ endfunction
 function! s:git_branch(...)
   if a:0 > 0
     let branch = split(a:1, '\n')[-1]
-    execute 'Gstash'
-    execute 'GstashApply'
+    " execute 'Gstash'
+    " execute 'GstashApply'
     execute 'Gwip Session'
     execute 'MakeSession'
     execute 'bufdo bd'
     execute 'Gcheckout ' . branch
     execute 'LoadSession'
     execute 'GwipPop'
-    execute 'GstashPop'
+    " execute 'GstashPop'
     execute 'TmuxRefresh'
   else
     call fzf#run({
