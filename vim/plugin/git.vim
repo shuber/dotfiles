@@ -4,7 +4,7 @@ nmap <leader>gb :Gbranch<cr>
 nmap <leader>gc :Gcommit -v<cr>
 nmap <leader>gd :Gdiff<cr>
 nmap <leader>ge :Extradite<cr>
-nmap <leader>gfp :Gpush --force<cr>:TmuxRefresh<cr>
+nmap <leader>gfp :Gpush --force-with-lease<cr>:TmuxRefresh<cr>
 nmap <leader>gg :Gbranch -<cr>
 nmap <leader>gh :Extradite<cr>
 nmap <leader>gl :Gbrowse<cr>
