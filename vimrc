@@ -151,9 +151,6 @@ hi CursorLineNR ctermbg=240 ctermfg=3
 " Use a single space as the mapleader
 let mapleader=" "
 
-" Bundle install
-nmap <leader>bi :!clear && bundle install<cr>
-
 " Copy line or highlighted contents to system clipboard
 nmap <Leader>y V<Leader>y
 vmap <Leader>y mm"+y<cr>`m

@@ -1,4 +1,5 @@
 nmap <leader>a :call RunAllSpecs()<cr>
+nmap <leader>bi :Dispatch bundle install<cr>
 nmap <leader>c :Dispatch spring rails console<cr>
 nmap <leader>el :RExtractLet<cr>
 nmap <leader>l :call RunLastSpec()<cr>
