@@ -40,20 +40,20 @@ endfunction
 function! s:git_branch(...)
   if a:0 > 0
     if type(a:1) == type([])
-      let branch = a:1[-1]
+      let l:branch = a:1[-1]
     else
-      let branch = a:1
+      let l:branch = a:1
     endif
 
-    " execute 'Gstash'
-    " execute 'GstashApply'
+    execute 'Gstash'
+    execute 'GstashApply'
     execute 'Gwip Session'
     execute 'MakeSession'
     execute 'bufdo bd'
-    execute 'Gcheckout ' . branch
+    execute 'Gcheckout ' . l:branch
     execute 'LoadSession'
     execute 'GwipPop'
-    " execute 'GstashPop'
+    execute 'GstashPop'
     execute 'TmuxRefresh'
     redraw!
   else
@@ -103,34 +103,33 @@ function! s:git_commit_wip_pop()
     silent! execute 'Git reset --soft HEAD~1'
     silent! execute 'Git reset'
     redraw!
-    echo 'Soft reset: '.commit
+    echo 'Soft reset: ' . commit
   else
-    echo 'No WIP found: '.commit
+    echo 'No WIP found: ' . commit
   endif
 endfunction
 
 function! s:git_stash()
-  let b:stash = s:git_stash_name()
-  silent! execute 'Git stash save ' . b:stash
+  let l:stash = s:git_stash_name()
+  silent! execute 'Git stash save ' . l:stash
 endfunction
 
 function! s:git_stash_apply()
-  let b:reference = s:git_stash_reference()
-  silent! execute 'Git stash apply ' . b:reference
+  let l:reference = s:git_stash_reference()
+  silent! execute 'Git stash apply ' . l:reference
 endfunction
 
 function! s:git_stash_name()
-  let b:session_file = SessionFile()
-  return substitute(b:session_file, '\W', '_', 'g')
+  let l:session_file = SessionFile()
+  return substitute(l:session_file, '\W', '_', 'g')
 endfunction
 
 function! s:git_stash_pop()
-  let b:reference = s:git_stash_reference()
-  silent! execute 'Git stash apply --index ' . b:reference
-  silent! execute 'Git stash drop ' . b:reference
+  let l:reference = s:git_stash_reference()
+  silent! execute 'Git stash pop --index ' . l:reference
 endfunction
 
 function! s:git_stash_reference()
-  let b:stash = s:git_stash_name()
-  return systemlist('git stash list | grep ' . b:stash . ' | cut -d ":" -f1')[0]
+  let l:stash = s:git_stash_name()
+  return systemlist('git stash list | grep ' . l:stash . ' | cut -d ":" -f1')[0]
 endfunction
