@@ -111,6 +111,7 @@ endfunction
 
 function! s:git_stash()
   let l:stash = s:git_stash_name()
+  echom 'Stashing ' . l:stash
   silent! execute 'Git stash save ' . l:stash
 endfunction
 
@@ -126,10 +127,20 @@ endfunction
 
 function! s:git_stash_pop()
   let l:reference = s:git_stash_reference()
-  silent! execute 'Git stash pop --index ' . l:reference
+
+  if l:reference
+    echom 'Looking for stash ' . l:reference
+    silent! execute 'Git stash pop --index ' . l:reference
+  else
+    echom 'No stash to pop'
+  end
 endfunction
 
 function! s:git_stash_reference()
   let l:stash = s:git_stash_name()
-  return systemlist('git stash list | grep ' . l:stash . ' | cut -d ":" -f1')[0]
+
+  try
+    return systemlist('git stash list | grep ' . l:stash . ' | cut -d ":" -f1')[0]
+  catch
+  endtry
 endfunction
