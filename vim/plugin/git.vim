@@ -69,7 +69,7 @@ function! s:git_checkout(unsanitized_branch)
   let branch = substitute(a:unsanitized_branch, '^\s*\(.\{-}\)\s*$', '\1', '')
   let checkout = 'git checkout '
   let checkout_old = checkout.branch
-  let checkout_new = checkout.'--track '.branch
+  let checkout_new = checkout.'-b '.branch
   let checkout_command = '!'.checkout_old.' || '.checkout_new
   silent! execute checkout_command
 endfunction
