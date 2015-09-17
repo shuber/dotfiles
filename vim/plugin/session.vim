@@ -11,7 +11,7 @@ function! MakeSession()
   let l:session_file = SessionFile()
   call MakeUndoSession()
   exe 'mksession! ' . l:session_file
-  echo 'Saved session ' l:session_file
+  echom 'Saved session ' l:session_file
 endfunction
 
 function! MakeUndoSession()
@@ -37,7 +37,7 @@ function! LoadSession()
     execute 'MakeSession'
   endif
 
-  echo 'Loaded session ' l:session_file
+  echom 'Loaded session ' l:session_file
 endfunction
 
 function! SessionFile()

@@ -69,7 +69,7 @@ function! s:git_checkout(unsanitized_branch)
   let branch = substitute(a:unsanitized_branch, '^\s*\(.\{-}\)\s*$', '\1', '')
   let checkout = 'git checkout '
   let checkout_old = checkout.branch
-  let checkout_new = checkout.'-b '.branch
+  let checkout_new = checkout.'--track '.branch
   let checkout_command = '!'.checkout_old.' || '.checkout_new
   silent! execute checkout_command
 endfunction
@@ -103,9 +103,9 @@ function! s:git_commit_wip_pop()
     silent! execute 'Git reset --soft HEAD~1'
     silent! execute 'Git reset'
     redraw!
-    echo 'Soft reset: ' . commit
+    echom 'Soft reset: ' . commit
   else
-    echo 'No WIP found: ' . commit
+    echom 'No WIP found: ' . commit
   endif
 endfunction
 
@@ -117,7 +117,10 @@ endfunction
 
 function! s:git_stash_apply()
   let l:reference = s:git_stash_reference()
-  silent! execute 'Git stash apply ' . l:reference
+
+  if type(l:reference) == type('')
+    silent! execute 'Git stash apply ' . l:reference
+  endif
 endfunction
 
 function! s:git_stash_name()
@@ -128,19 +131,20 @@ endfunction
 function! s:git_stash_pop()
   let l:reference = s:git_stash_reference()
 
-  if l:reference
-    echom 'Looking for stash ' . l:reference
+  if type(l:reference) == type('')
+    echom 'Stash pop: ' . l:reference
+    silent! execute 'Git reset --hard'
     silent! execute 'Git stash pop --index ' . l:reference
   else
-    echom 'No stash to pop'
-  end
+    echom 'No WIP stash'
+  endif
 endfunction
 
 function! s:git_stash_reference()
   let l:stash = s:git_stash_name()
+  let l:reference = systemlist('git stash list | grep ' . l:stash . ' | cut -d ":" -f1')
 
-  try
-    return systemlist('git stash list | grep ' . l:stash . ' | cut -d ":" -f1')[0]
-  catch
-  endtry
+  if type(l:reference) == type([]) && len(l:reference) > 0
+    return l:reference[0]
+  endif
 endfunction
