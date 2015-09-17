@@ -29,28 +29,28 @@ function! MakeUndoSession()
 endfunction
 
 function! LoadSession()
-  let b:session_file = SessionFile()
+  let l:session_file = SessionFile()
 
-  if (filereadable(b:session_file))
-    exec 'source ' b:session_file
+  if (filereadable(l:session_file))
+    exec 'source ' l:session_file
   else
     execute 'MakeSession'
   endif
 
-  echo 'Loaded session ' b:session_file
+  echo 'Loaded session ' l:session_file
 endfunction
 
 function! SessionFile()
-  let b:session_dir = $HOME . '/.vim/sessions'
-  let b:git_branch = systemlist('git symbolic-ref --short HEAD')[0]
-  let b:session_name = getcwd() . '/' . b:git_branch
-  let b:session_path = substitute(b:session_name, '\W', '_', 'g') . '.vim'
-  let b:session_file = b:session_dir . '/' . b:session_path
+  let l:session_dir = $HOME . '/.vim/sessions'
+  let l:git_branch = systemlist('git symbolic-ref --short HEAD')[0]
+  let l:session_name = getcwd() . '/' . l:git_branch
+  let l:session_path = substitute(l:session_name, '\W', '_', 'g') . '.vim'
+  let l:session_file = l:session_dir . '/' . l:session_path
 
-  if (filewritable(b:session_dir) != 2)
-    exec 'silent !mkdir -p ' b:session_dir
+  if (filewritable(l:session_dir) != 2)
+    exec 'silent !mkdir -p ' l:session_dir
     redraw!
   endif
 
-  return b:session_file
+  return l:session_file
 endfunction
