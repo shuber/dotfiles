@@ -246,3 +246,15 @@ vmap <C-c> <esc>
 " Move visual block
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+
+"===============================================================================
+" Reference
+"===============================================================================
+
+" g:var - global
+" a:var - function argument
+" l:var - local to function
+" b:var - local to buffer
+" w:var - local to window
+" t:var - local to tab
+" v:var - Predefined by Vim

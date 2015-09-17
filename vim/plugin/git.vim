@@ -39,7 +39,12 @@ endfunction
 
 function! s:git_branch(...)
   if a:0 > 0
-    let branch = split(a:1, '\n')[-1]
+    if type(a:1) == type([])
+      let branch = a:1[-1]
+    else
+      let branch = a:1
+    endif
+
     " execute 'Gstash'
     " execute 'GstashApply'
     execute 'Gwip Session'
@@ -50,11 +55,12 @@ function! s:git_branch(...)
     execute 'GwipPop'
     " execute 'GstashPop'
     execute 'TmuxRefresh'
+    redraw!
   else
     call fzf#run({
     \ 'options': '--print-query',
     \ 'source': 'git branch -a',
-    \ 'sink': function('s:git_branch')
+    \ 'sink*': function('s:git_branch')
     \ })
   endif
 endfunction

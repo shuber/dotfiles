@@ -1,13 +1,31 @@
-set sessionoptions=blank,buffers,curdir,folds,globals,help,localoptions,options,resize,tabpages,winsize,winpos
+" set sessionoptions=blank,buffers,curdir,folds,globals,help,localoptions,options,resize,tabpages,winsize,winpos
+
+set undolevels=1000
+set undoreload=10000
 
 command! -nargs=0 LoadSession :call LoadSession(<f-args>)
 command! -nargs=0 MakeSession :call MakeSession(<f-args>)
 command! -nargs=0 SessionFile :echom SessionFile(<f-args>)
 
 function! MakeSession()
-  let b:session_file = SessionFile()
-  exe 'mksession! ' . b:session_file
-  echo 'Saved session ' b:session_file
+  let l:session_file = SessionFile()
+  call MakeUndoSession()
+  exe 'mksession! ' . l:session_file
+  echo 'Saved session ' l:session_file
+endfunction
+
+function! MakeUndoSession()
+  let l:session_file = SessionFile()
+  let l:undo_dir = substitute(l:session_file, '\W', '_', 'g')
+  let l:undo_path = $HOME . '/.vim/undo/' . l:undo_dir
+
+  if (filewritable(l:undo_path) != 2)
+    exec 'silent !mkdir -p ' l:undo_path
+    redraw!
+  endif
+
+  let &undodir = l:undo_path
+  set undofile
 endfunction
 
 function! LoadSession()
