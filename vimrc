@@ -131,6 +131,9 @@ set ttyfast
 " Read/write a file with encryption using `vim -x filename.ext`
 set cryptmethod=blowfish
 
+" Use zsh as the default vim shell
+set shell=/usr/local/bin/zsh\ -l
+
 " Vertically split the diff window
 let g:extradite_diff_split = 'vert split'
 
