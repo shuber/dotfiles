@@ -6,7 +6,7 @@ nmap <leader>gd :Gdiff<cr>
 nmap <leader>ge :Extradite<cr>
 nmap <leader>gfp :Gpush --force-with-lease<cr>:TmuxRefresh<cr>
 nmap <leader>gg :Gbranch -<cr>
-nmap <leader>gh :Extradite<cr>
+nmap <leader>gh :Git pull-request<cr>
 nmap <leader>gl :Gbrowse<cr>
 nmap <leader>gu :Dispatch git pull && tmux refresh-client -S<cr>
 nmap <leader>gp :Dispatch git push && tmux refresh-client -S<cr>
