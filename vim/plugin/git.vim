@@ -12,9 +12,6 @@ nmap <leader>gu :Dispatch git pull && tmux refresh-client -S<cr>
 nmap <leader>gp :Dispatch git push && tmux refresh-client -S<cr>
 nmap <leader>gs :Gstatus<cr>
 nmap <leader>gw :Gwrite<cr>
-nmap <leader>gsd :GitSessionDelete<cr>
-nmap <leader>gsl :GitSessionLoad<cr>
-nmap <leader>gss :GitSessionSave<cr>
 nmap <leader>gww :Gwip<cr>
 nmap <leader>gwp :GwipPop<cr>
 
