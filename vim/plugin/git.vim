@@ -8,7 +8,7 @@ nmap <leader>gfp :Gpush --force-with-lease<cr>:TmuxRefresh<cr>
 nmap <leader>gg :Gbranch -<cr>
 nmap <leader>gh :Extradite<cr>
 nmap <leader>gl :Gbrowse<cr>
-nmap <leader>gu :Gpull<cr>
+nmap <leader>gu :Dispatch git pull && tmux refresh-client -S<cr>
 nmap <leader>gp :Dispatch git push && tmux refresh-client -S<cr>
 nmap <leader>gs :Gstatus<cr>
 nmap <leader>gw :Gwrite<cr>
