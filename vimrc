@@ -194,9 +194,6 @@ cmap %% <c-r>=expand('%:p')<cr>
 " Don't require <Shift> when entering command mode
 nnoremap ; :
 
-" Use <C-s> to save
-nmap <C-s> :w<cr>
-
 " Easily edit configuration files
 nmap ,bash :e $HOME/.bashrc<cr>
 nmap ,bun :e $HOME/.vimrc.bundles<cr>
