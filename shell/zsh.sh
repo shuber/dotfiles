@@ -1,5 +1,7 @@
 # Make sure we're in a zsh shell
 if [ -n "${ZSH_VERSION}" ]; then
+  export ZDOTDIR=$HOME
+
   # Increase history storage size and location
   HISTFILE=$HOME/.zsh_history
   HISTSIZE=100000
