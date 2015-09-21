@@ -144,3 +144,10 @@ git clone git@github.com:shuber/dotfiles.git ~/.dotfiles
 ## Potential experiments
 
 * https://github.com/Shougo/unite.vim
+* https://github.com/nathanaelkane/vim-indent-guides
+* https://github.com/Yggdroot/indentLine
+* https://github.com/kien/rainbow_parentheses.vim
+* https://github.com/mhinz/vim-signify
+* https://github.com/kshenoy/vim-signature
+* https://github.com/mhinz/vim-startify
+* https://github.com/rhysd/clever-f.vim
