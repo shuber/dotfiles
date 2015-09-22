@@ -14,21 +14,14 @@ call vundle#begin()
 
 " Configure plugins
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'vim-scripts/ctags.vim'
 Plugin 'danro/rename.vim'
 Plugin 'danchoi/ri.vim'
 Plugin 'depuracao/vim-rdoc'
-Plugin 'junegunn/fzf'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'kana/vim-textobj-entire'
 Plugin 'kana/vim-textobj-user'
-Plugin 'kien/ctrlp.vim'
-Plugin 'ivalkeen/vim-ctrlp-tjump'
-Plugin 'majutsushi/tagbar'
 Plugin 'mattn/webapi-vim'
 Plugin 'rizzatti/dash.vim'
-Plugin 'rking/ag.vim'
-Plugin 'szw/vim-tags'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-cucumber'
 Plugin 'tpope/vim-dispatch'
@@ -45,6 +38,16 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-scripts/dbext.vim'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'vim-scripts/tComment'
+
+" Searching
+Plugin 'ivalkeen/vim-ctrlp-tjump'
+Plugin 'junegunn/fzf'
+Plugin 'kien/ctrlp.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'rhysd/clever-f.vim'
+Plugin 'rking/ag.vim'
+Plugin 'szw/vim-tags'
+Plugin 'vim-scripts/ctags.vim'
 
 " Git
 Plugin 'mattn/gist-vim'
