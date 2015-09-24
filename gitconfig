@@ -41,3 +41,5 @@
 [user]
 	email = sean@lendinghome.com
 	name = Sean Huber
+[rerere]
+	enabled = true
