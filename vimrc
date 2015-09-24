@@ -158,30 +158,30 @@ hi CursorLineNR ctermbg=240 ctermfg=3
 let mapleader=" "
 
 " Copy line or highlighted contents to system clipboard
-nmap <Leader>y V<Leader>y
-vmap <Leader>y mm"+y<cr>`m
+nmap <leader>y V<Leader>y
+vmap <leader>y mm"+y<cr>`m
 
 " Enable paste mode, paste from system clipboard, then disable paste mode
-nmap <Leader>p mm:set paste<cr>"+p`mJx
+nmap <leader>p mm:set paste<cr>"+p`mJx
 
 " Async commands using vim-dispatch
-nmap <Leader>d :Dispatch<cr>:e<cr>
+nmap <leader>d :Dispatch<cr>:e<cr>
 
 " Edit a file in the current directory
-nmap <Leader>e :e <C-r>=expand('%:h').'/'<cr>
+nmap <leader>e :e <C-r>=expand('%:h').'/'<cr>
 
 " Easily switch between the last two files
-nmap <Leader><Leader> <C-^>
+nmap <leader><leader> <C-^>
 
 " Toggle the quickfix window
-nmap <script> <silent> <Leader>q :call ToggleQuickfixList()<cr>:e<cr>
+nmap <script> <silent> <leader>q :call ToggleQuickfixList()<cr>:e<cr>
 
 " SQL
-nmap <Leader>see vae<leader>se<c-o><c-w>=zz
-nmap <Leader>sc :!bin/compile development<cr>:e development.sql<cr>vae<leader>se<c-o><c-o><c-w>=zz
-nmap <Leader>se :DBExecSQLUnderCursor<cr>
-vmap <Leader>se :DBExecVisualSQL<cr>
-nmap <Leader>w :vertical resize 300<cr>
+nmap <leader>see vae<leader>se<c-o><c-w>=zz
+nmap <leader>sc :!bin/compile development<cr>:e development.sql<cr>vae<leader>se<c-o><c-o><c-w>=zz
+nmap <leader>se :DBExecSQLUnderCursor<cr>
+vmap <leader>se :DBExecVisualSQL<cr>
+nmap <leader>w :vertical resize 300<cr>
 
 "===============================================================================
 " Command mode mappings
