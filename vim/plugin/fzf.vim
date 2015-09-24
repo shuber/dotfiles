@@ -1,4 +1,4 @@
-set rtp+=/usr/local/Cellar/fzf/0.10.2
+set rtp+=/usr/local/opt/fzf
 
 nmap <leader>f :FZF! -x<cr>
 
