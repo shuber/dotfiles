@@ -9,6 +9,12 @@ if [[ ! "$MANPATH" =~ "$fzf_root/man" && -d "$fzf_root/man" ]]; then
   export MANPATH="$MANPATH:$fzf_root/man"
 fi
 
+# Use Ag instead of find to filter results
+export FZF_DEFAULT_COMMAND='ag -l -g ""'
+
+# Use Ag for CTRL-T searches as well
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
 if [ -n "${ZSH_VERSION}" ]; then
   extension="zsh"
 else
