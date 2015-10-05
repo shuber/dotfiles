@@ -146,6 +146,9 @@ let g:dbext_default_window_use_horiz = 0
 " Disable vim instant markdown in favor of :InstantMarkdownPreview
 let g:instant_markdown_autostart = 0
 
+" Configure syntastic
+let g:syntastic_javascript_checkers = ["eslint"]
+
 " Highlight current line number
 hi clear CursorLineNR
 hi CursorLineNR ctermbg=240 ctermfg=3
