@@ -1,11 +1,11 @@
 nmap <leader>gam :Gamend<cr>
 nmap <leader>gaa :Gadd<cr>:Gcommit --amend --no-edit<cr>:TmuxRefresh<cr>
-nmap <leader>gb :Promiscuous<cr>
+nmap <leader>gb :Promiscuous<cr>:TmuxRefresh<cr>
 nmap <leader>gc :Gcommit -v<cr>
 nmap <leader>gd :Gdiff<cr>
 nmap <leader>ge :Extradite<cr>
 nmap <leader>gfp :Gpush --force-with-lease<cr>:TmuxRefresh<cr>
-nmap <leader>gg :Promiscuous -<cr>
+nmap <leader>gg :Promiscuous -<cr>:TmuxRefresh<cr>
 nmap <leader>gh :Git pull-request<cr>
 nmap <leader>gl :Gbrowse<cr>
 nmap <leader>gu :Dispatch git pull && tmux refresh-client -S<cr>
