@@ -12,6 +12,9 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" Development
+Plugin 'shuber/vim-promiscuous'
+
 " Configure plugins
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'danro/rename.vim'
@@ -54,7 +57,6 @@ Plugin 'mattn/gist-vim'
 Plugin 'int3/vim-extradite'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'shuber/vim-promiscuous'
 
 " Syntax
 Plugin 'ekalinin/Dockerfile.vim'
