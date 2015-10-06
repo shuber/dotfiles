@@ -149,6 +149,9 @@ let g:instant_markdown_autostart = 0
 " Configure syntastic
 let g:syntastic_javascript_checkers = ["eslint"]
 
+" Output all Promiscuous commands for debugging
+let g:promiscuous_verbose = 1
+
 " Highlight current line number
 hi clear CursorLineNR
 hi CursorLineNR ctermbg=240 ctermfg=3
