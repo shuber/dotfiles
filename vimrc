@@ -54,6 +54,7 @@ Plugin 'mattn/gist-vim'
 Plugin 'int3/vim-extradite'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'shuber/vim-promiscuous'
 
 " Syntax
 Plugin 'ekalinin/Dockerfile.vim'
