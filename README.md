@@ -151,3 +151,22 @@ git clone git@github.com:shuber/dotfiles.git ~/.dotfiles
 * https://github.com/kshenoy/vim-signature
 * https://github.com/mhinz/vim-startify
 * https://github.com/rhysd/clever-f.vim
+* https://github.com/junegunn/vim-plug
+* https://github.com/terryma/vim-multiple-cursors
+* https://github.com/terryma/vim-expand-region
+* https://github.com/michaeljsmith/vim-indent-object
+* https://github.com/sirver/ultisnips
+* https://github.com/janko-m/vim-test
+* https://github.com/mattn/emmet-vim
+* https://github.com/msanders/snipmate.vim
+* https://github.com/majutsushi/tagbar
+* https://github.com/ervandew/supertab
+* https://github.com/Shougo/vimshell.vim
+* http://www.vim.org/scripts/script.php?script_id=1849 (autoclose)
+* http://www.vim.org/scripts/script.php?script_id=1234 (yankring)
+* https://github.com/gregsexton/gitv
+* https://github.com/othree/html5.vim
+* https://github.com/xolox/vim-notes
+* https://github.com/jiangmiao/auto-pairs
+* https://github.com/hsitz/VimOrganizer
+* https://github.com/szw/vim-ctrlspace
