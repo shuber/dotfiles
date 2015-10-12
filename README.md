@@ -170,3 +170,4 @@ git clone git@github.com:shuber/dotfiles.git ~/.dotfiles
 * https://github.com/jiangmiao/auto-pairs
 * https://github.com/hsitz/VimOrganizer
 * https://github.com/szw/vim-ctrlspace
+* https://github.com/blueyed/vim-diminactive
