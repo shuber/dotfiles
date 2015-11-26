@@ -1,2 +1,3 @@
 ---
 BUNDLE_DISABLE_LOCAL_BRANCH_CHECK: 'true'
+BUNDLE_PATH: vendor/bundle
