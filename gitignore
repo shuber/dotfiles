@@ -1,12 +1,25 @@
+TODO.org
+**/.#*.rb
+spec/fixtures/ignore/*
+infrastructure/ansible/roles/*/vars/*.yml
 ########################
 # Personal             #
 ########################
+.bash_history
+.bundle
+.code_swarm
+.env*.local
 .vagrant
 config/unicorn/office.rb
-/bin/*
 /coverage
 /docker
 /vendor/bundle
+tmp
+vendor/original-bundle
+vendor/docker-bundle
+public/bundles
+# gems/ui/spec/dummy
+ops/public/assets/product_explorer/product_explorer_bundle.js
 
 #########################
 # Ruby and php versions #
