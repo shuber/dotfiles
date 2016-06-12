@@ -1,0 +1,13 @@
+* Dotfiles
+** Emacs
+*** TODO Learn basic org-mode syntax
+*** TODO Use layouts instead of workspaces as "tabs"
+*** TODO Learn async rspec workflow
+*** TODO Research statusline
+**** What is all the info being displayed?
+**** Is it easy to customize? How?
+**** Do we need all that statusline stuff?
+**** Can we disable the pretty powerline separators in terminal mode?
+** Tmux
+*** TODO Fix statusline colors
+*** TODO Add more git info to status (staged/unstaged)
