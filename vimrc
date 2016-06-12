@@ -14,6 +14,7 @@ call vundle#begin()
 
 " Development
 Plugin 'shuber/vim-promiscuous'
+" Plugin 'file:///Users/Sean/Code/vim/promiscuous'
 
 " Configure plugins
 Plugin 'VundleVim/Vundle.vim'
@@ -75,7 +76,7 @@ Plugin 'slim-template/vim-slim'
 Plugin 'edkolev/promptline.vim'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
-Plugin 'bling/vim-airline'
+" Plugin 'bling/vim-airline'
 
 " Tmux
 Plugin 'keith/tmux.vim'
@@ -154,6 +155,8 @@ let g:syntastic_javascript_checkers = ["eslint"]
 
 " Output all Promiscuous commands for debugging
 let g:promiscuous_verbose = 1
+
+let g:gitgutter_max_signs = 1000
 
 " Highlight current line number
 hi clear CursorLineNR
