@@ -45,6 +45,7 @@ values."
      php
      python
      react
+     search-engine
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom
@@ -282,6 +283,11 @@ you should place your code here."
 
   ;; Display the git-gutter on the left side by default
   (setq git-gutter-fr:side 'left-fringe)
+
+  ;; Configure search engine for misc searches
+  (setq browse-url-browser-function 'browse-url-generic
+        engine/browser-function 'browse-url-generic
+        browse-url-generic-program "open")
 
   ;; Standardize indentation/tab widths
   (setq css-indent-level 2)
