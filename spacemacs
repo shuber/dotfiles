@@ -28,7 +28,6 @@ values."
      better-defaults
      dockerfile
      emacs-lisp
-     emoji
      eyebrowse
      (git :variables
           git-enable-github-support t
