@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # These commands for thoughtbot's parity were taken from the
 # Heroku tips and tricks upcase video.
 # https://upcase.com/videos/heroku-tips-and-tricks
@@ -12,5 +14,5 @@ copy-production-to() {
 }
 
 # Provide tab completion of either "staging" or "development"
-_copy-production-to() { reply=(development staging) }
-compctl -K _copy-production-to copy-production-to
+# _copy-production-to() { reply=(development staging) }
+# compctl -K _copy-production-to copy-production-to
