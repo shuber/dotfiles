@@ -3,5 +3,7 @@ bundler
 pry
 rubocop
 rubocop-git
+sass
+scss-lint
 spring
 spring-commands-rspec
