@@ -323,7 +323,7 @@ you should place your code here."
     (interactive)
     (other-window -1))
 
-  (defun refresh-tmux-client (&optional args)
+  (defun refresh-tmux-client ()
     "Refresh the TMUX client"
     (interactive)
     (shell-command-to-string "tmux refresh-client -S"))
