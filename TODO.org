@@ -1,13 +1,27 @@
-* Dotfiles
-** Emacs
-*** TODO Learn basic org-mode syntax
-*** TODO Use layouts instead of workspaces as "tabs"
-*** TODO Learn async rspec workflow
-*** TODO Research statusline
-**** What is all the info being displayed?
-**** Is it easy to customize? How?
-**** Do we need all that statusline stuff?
-**** Can we disable the pretty powerline separators in terminal mode?
-** Tmux
-*** TODO Fix statusline colors
-*** TODO Add more git info to status (staged/unstaged)
+* Emacs
+** DONE Start a TODO list and commit it
+CLOSED: [2016-06-12 Sun 10:44]
+** TODO Learn basic org-mode syntax
+*** DONE Should these TODOs be "headers" like this? (seems fine)
+CLOSED: [2016-06-12 Sun 11:08]
+*** DONE learn keybinding to toggle todo states (t)
+CLOSED: [2016-06-12 Sun 11:08]
+*** DONE learn keybinding to insert a new todo (S-t)
+CLOSED: [2016-06-12 Sun 11:08]
+*** DONE learn keybindings to promote/demote subtrees
+CLOSED: [2016-06-12 Sun 11:08]
+** TODO Use layouts instead of workspaces as "tabs"
+** TODO Learn async rspec workflow
+** TODO Research statusline
+*** What is all the info being displayed?
+*** Is it easy to customize? How?
+*** Do we need all that statusline stuff?
+*** Can we disable the pretty powerline separators in terminal mode?
+** TODO Port over and enhance vim-promiscuous
+*** Project switching with emacs workspaces
+*** Consider using git workspaces
+** TODO Learn how to review and comment on PR's from within emacs
+** TODO Write a blog post about the switch to spacemacs
+* Tmux
+** TODO Fix statusline colors
+** TODO Add more git info to status (staged/unstaged)
