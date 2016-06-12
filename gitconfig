@@ -44,3 +44,5 @@
 	name = Sean Huber
 [rerere]
 	enabled = true
+[diff]
+	tool = vim
