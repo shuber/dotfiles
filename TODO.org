@@ -1,7 +1,8 @@
 * Emacs
 ** DONE Start a TODO list and commit it
 CLOSED: [2016-06-12 Sun 10:44]
-** TODO Learn basic org-mode syntax
+** DONE Learn basic org-mode syntax
+CLOSED: [2016-06-12 Sun 11:10]
 *** DONE Should these TODOs be "headers" like this? (seems fine)
 CLOSED: [2016-06-12 Sun 11:08]
 *** DONE learn keybinding to toggle todo states (t)
@@ -9,19 +10,28 @@ CLOSED: [2016-06-12 Sun 11:08]
 *** DONE learn keybinding to insert a new todo (S-t)
 CLOSED: [2016-06-12 Sun 11:08]
 *** DONE learn keybindings to promote/demote subtrees
-CLOSED: [2016-06-12 Sun 11:08]
-** TODO Use layouts instead of workspaces as "tabs"
+*** DONE learn keybindings for folding (tab)
+CLOSED: [2016-06-12 Sun 11:11]
 ** TODO Learn async rspec workflow
 ** TODO Research statusline
-*** What is all the info being displayed?
-*** Is it easy to customize? How?
-*** Do we need all that statusline stuff?
-*** Can we disable the pretty powerline separators in terminal mode?
-** TODO Port over and enhance vim-promiscuous
-*** Project switching with emacs workspaces
-*** Consider using git workspaces
+*** TODO What is all the info being displayed?
+*** TODO Is it easy to customize? How?
+*** TODO Do we need all that statusline stuff?
+*** TODO Can we disable the pretty powerline separators in terminal mode?
+*** TODO How do we change the folding ellipsis to something else?
 ** TODO Learn how to review and comment on PR's from within emacs
-** TODO Write a blog post about the switch to spacemacs
+** TODO Write blog posts about the switch to spacemacs
+*** TODO the initial switch, installation, configuration
+*** TODO powerline tweaks
+*** TODO interesting keybindings and workflows
+** TODO Use emacs server mode so startups are faster and update EDITOR
+** TODO Use layouts instead of workspaces as "tabs"
+** TODO Port over and enhance vim-promiscuous
+*** TODO Project switching with [[https://github.com/syl20bnr/spacemacs/tree/master/layers/%252Bwindow-management/eyebrowse][emacs workspaces]]
+*** TODO Consider using [[https://git-scm.com/docs/git-worktree][git worktree]]
+* Theme
+** TODO make base16 theme with LH colors
+** TODO use theme in emacs and iterm
 * Tmux
-** TODO Fix statusline colors
-** TODO Add more git info to status (staged/unstaged)
+** TODO Fix statusline colors (use base16 colors)
+** TODO Add more git info to status (staged count in blue)
