@@ -35,4 +35,5 @@ CLOSED: [2016-06-12 Sun 11:11]
 * Tmux
 ** DONE Fix statusline colors (use base16 colors)
 CLOSED: [2016-06-12 Sun 21:15]
-** TODO Add more git info to status (staged count in blue)
+** DONE Add more git info to status (staged count in blue)
+CLOSED: [2016-06-12 Sun 22:35]
