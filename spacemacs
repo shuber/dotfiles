@@ -290,6 +290,7 @@ you should place your code here."
         browse-url-generic-program "open")
 
   ;; Standardize indentation/tab widths
+  (setq-default tab-width 2)
   (setq css-indent-level 2)
   (setq css-indent-offset 2)
   (setq evil-shift-width 2)
@@ -300,7 +301,7 @@ you should place your code here."
   (setq js2-basic-offset 2)
   (setq js2-indent-switch-body t)
   (setq ruby-indent-level 2)
-  (setq-default tab-width 2)
+  (setq sh-indent-level 2)
 
   ;; Don't require shift to enter command mode
   (define-key evil-normal-state-map (kbd ";") 'evil-ex)
