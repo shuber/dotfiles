@@ -24,6 +24,9 @@ CLOSED: [2016-06-12 Sun 11:11]
 *** TODO the initial switch, installation, configuration
 *** TODO powerline tweaks
 *** TODO interesting keybindings and workflows
+*** TODO org-mode
+*** TODO magit
+*** TODO tmux-git
 ** TODO Use emacs server mode so startups are faster and update EDITOR
 ** TODO Use layouts instead of workspaces as "tabs"
 ** TODO Port over and enhance vim-promiscuous
@@ -32,7 +35,8 @@ CLOSED: [2016-06-12 Sun 11:11]
 * Theme
 ** TODO make base16 theme with LH colors
 ** TODO use theme in emacs and iterm
-* Tmux
+* DONE Tmux
+CLOSED: [2016-06-12 Sun 22:46]
 ** DONE Fix statusline colors (use base16 colors)
 CLOSED: [2016-06-12 Sun 21:15]
 ** DONE Add more git info to status (staged count in blue)
