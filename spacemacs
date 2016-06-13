@@ -316,8 +316,9 @@ you should place your code here."
   (define-key evil-normal-state-map (kbd "C-h") 'eyebrowse-prev-window-config)
   (define-key evil-normal-state-map (kbd "C-l") 'eyebrowse-next-window-config)
 
-  ;; Misc hooks
+  ;; Refresh tmux client when applicable
   (add-hook 'after-save-hook 'refresh-tmux-client)
+  (add-hook 'magit-pre-refresh-hook 'refresh-tmux-client)
 
   (defun prev-window ()
     "Focus the previous window"
