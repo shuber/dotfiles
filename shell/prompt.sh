@@ -171,7 +171,7 @@ function __promptline {
   local y_sep_fg="${wrap}38;5;237${end_wrap}"
   if [[ -n ${ZSH_VERSION-} ]]; then
     PROMPT="$(__promptline_left_prompt)"
-    # RPROMPT="$(__promptline_right_prompt)"
+    # RPROMPT="$(__promptline_right_prompt)" # git
   else
     PS1="$(__promptline_ps1)"
   fi
