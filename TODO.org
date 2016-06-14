@@ -2,7 +2,7 @@
 ** DONE Start a TODO list and commit it
 CLOSED: [2016-06-12 Sun 10:44]
 ** DONE Learn basic org-mode syntax
-CLOSED: [2016-06-12 Sun 11:10]
+CLOSED: [2016-06-14 Tue 12:52]
 *** DONE Should these TODOs be "headers" like this? (seems fine)
 CLOSED: [2016-06-12 Sun 11:08]
 *** DONE learn keybinding to toggle todo states (t)
@@ -11,7 +11,10 @@ CLOSED: [2016-06-12 Sun 11:08]
 CLOSED: [2016-06-12 Sun 11:08]
 *** DONE learn keybindings to promote/demote subtrees
 *** DONE learn keybindings for folding (tab)
+*** TODO 
 CLOSED: [2016-06-12 Sun 11:11]
+*** DONE learn how to export org-mode docs
+CLOSED: [2016-06-14 Tue 12:53]
 ** TODO Learn async rspec workflow
 ** TODO Research statusline
 *** TODO What is all the info being displayed?
