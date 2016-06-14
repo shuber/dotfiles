@@ -1,5 +1,5 @@
 TODO.org
-**/.#*.*
+**/.#*
 spec/fixtures/ignore/*
 infrastructure/ansible/roles/*/vars/*.yml
 ########################
