@@ -1,7 +1,12 @@
+# Emacs
 TODO.org
+TODO.html
 **/.#*
+
+# Misc
 spec/fixtures/ignore/*
 infrastructure/ansible/roles/*/vars/*.yml
+
 ########################
 # Personal             #
 ########################
