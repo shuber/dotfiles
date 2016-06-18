@@ -45,6 +45,7 @@ values."
      php
      python
      react
+     restclient
      search-engine
      (shell :variables
             shell-default-height 30
@@ -123,13 +124,14 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(base16-eighties-dark
-                         base16-eighties-light)
+                         ;; base16-eighties-light
+                         base16-lendinghome-dark)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 11
+                               :size 13
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -203,7 +205,7 @@ values."
    dotspacemacs-loading-progress-bar t
    ;; If non nil the frame is fullscreen when Emacs starts up. (default nil)
    ;; (Emacs 24.4+ only)
-   dotspacemacs-fullscreen-at-startup nil
+   dotspacemacs-fullscreen-at-startup t
    ;; If non nil `spacemacs/toggle-fullscreen' will not use native fullscreen.
    ;; Use to disable fullscreen animations in OSX. (default nil)
    dotspacemacs-fullscreen-use-non-native t
@@ -272,8 +274,12 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
+  ;; Font in GUI mode
+  (set-face-attribute 'default nil :family "Fira Code")
+  (set-face-attribute 'default nil :height 110)
+
   ;; Disable NerdTree related functionality which slows down performance
-  (setq neo-vc-integration nil)`
+  (setq neo-vc-integration nil)
 
   ;; Fix powerline separator colors in OSX GUI mode
   (setq ns-use-srgb-colorspace nil)
@@ -329,7 +335,28 @@ you should place your code here."
     "Refresh the TMUX client"
     (interactive)
     (shell-command-to-string "tmux refresh-client -S"))
-  )
 
+  (require 'evil)
+
+  (defgroup evil-textobj-entire nil
+    "Text object entire buffer for Evil"
+    :prefix "evil-textobj-entire-"
+    :group 'evil)
+
+  (defcustom evil-textobj-entire-key "e"
+    "Key for evil-inner-entire"
+    :type 'string
+    :group 'evil-textobj-entire)
+
+  (evil-define-text-object evil-entire-entire-buffer (count &optional beg end type)
+    "Select entire buffer"
+    (evil-range (point-min) (point-max)))
+
+  (define-key evil-outer-text-objects-map evil-textobj-entire-key 'evil-entire-entire-buffer)
+  (define-key evil-inner-text-objects-map evil-textobj-entire-key 'evil-entire-entire-buffer)
+
+  (provide 'evil-textobj-entire)
+
+  )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
