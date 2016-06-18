@@ -1,3 +1,16 @@
+* DONE Theme
+CLOSED: [2016-06-18 Sat 10:22]
+** DONE make base16 theme with LH colors
+CLOSED: [2016-06-16 Thu 17:59]
+** DONE use theme in emacs and iterm
+CLOSED: [2016-06-16 Thu 17:59]
+
+* DONE Tmux
+CLOSED: [2016-06-12 Sun 22:46]
+** DONE Fix statusline colors (use base16 colors)
+CLOSED: [2016-06-12 Sun 21:15]
+** DONE Add more git info to status (staged count in blue)
+CLOSED: [2016-06-12 Sun 22:35]
 * Emacs
 ** DONE Start a TODO list and commit it
 CLOSED: [2016-06-12 Sun 10:44]
@@ -11,10 +24,8 @@ CLOSED: [2016-06-12 Sun 11:08]
 CLOSED: [2016-06-12 Sun 11:08]
 *** DONE learn keybindings to promote/demote subtrees
 *** DONE learn keybindings for folding (tab)
-*** TODO 
-CLOSED: [2016-06-12 Sun 11:11]
 *** DONE learn how to export org-mode docs
-CLOSED: [2016-06-14 Tue 12:53]
+CLOSED: [2016-06-18 Sat 10:21]
 ** TODO Learn async rspec workflow
 ** TODO Research statusline
 *** TODO What is all the info being displayed?
@@ -35,12 +46,3 @@ CLOSED: [2016-06-14 Tue 12:53]
 ** TODO Port over and enhance vim-promiscuous
 *** TODO Project switching with [[https://github.com/syl20bnr/spacemacs/tree/master/layers/%252Bwindow-management/eyebrowse][emacs workspaces]]
 *** TODO Consider using [[https://git-scm.com/docs/git-worktree][git worktree]]
-* Theme
-** TODO make base16 theme with LH colors
-** TODO use theme in emacs and iterm
-* DONE Tmux
-CLOSED: [2016-06-12 Sun 22:46]
-** DONE Fix statusline colors (use base16 colors)
-CLOSED: [2016-06-12 Sun 21:15]
-** DONE Add more git info to status (staged count in blue)
-CLOSED: [2016-06-12 Sun 22:35]
