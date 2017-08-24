@@ -1,3 +1,3 @@
-export PATH="$HOME/Code/lendinghome/toolbelt:$HOME/Code/lendinghome/toolbelt/bin:$PATH"
+export PATH="$HOME/Code/lendinghome/monolith/bin:$HOME/Code/lendinghome/monolith/toolbelt:$PATH"
 
 alias prod="heroku run rails console --app lendinghome-ops"
