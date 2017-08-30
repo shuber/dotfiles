@@ -1,6 +1,3 @@
-# Use Vim as the default editor
-export EDITOR="vim"
-
 # Display colors in the command line
 export CLICOLOR=1
 
@@ -13,3 +10,4 @@ alias edit-zsh-local="$EDITOR $HOME/.zshrc.local"
 alias reload-bash="source $HOME/.bashrc"
 alias reload-zsh="source $HOME/.zshrc"
 alias ssh-office="ssh office.local"
+alias te="$HOME/Code/shuber/text_editor/bin/te"
