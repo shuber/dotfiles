@@ -71,6 +71,8 @@ Plugin 'suan/vim-instant-markdown'
 Plugin 'mxw/vim-jsx'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'slim-template/vim-slim'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'Quramy/tsuquyomi'
 
 " Theme
 Plugin 'edkolev/promptline.vim'
