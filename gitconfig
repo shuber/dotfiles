@@ -10,7 +10,7 @@
   list = !bash -c 'ssh git@macke-0.inside.einsteinmedical.com list $* 2>/dev/null' -
   ll = log --stat --abbrev-commit
   m = merge
-  pr = pull-request
+  pr = !hub-pull-request
   p = push
   r = rebase
   s = status
