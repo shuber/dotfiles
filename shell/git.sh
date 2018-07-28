@@ -1,5 +1,6 @@
 alias g="git"
 alias git="hub"
+alias gpr="hub pull-request"
 alias edit-git-conf="$EDITOR $HOME/.gitconfig"
 alias edit-git-ignore="$EDITOR $HOME/.gitignore"
 
