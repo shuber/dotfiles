@@ -2,6 +2,7 @@
   b = branch
   c = commit -v
   ca = commit -av
+  cam = commit -a --amend --no-edit
   co = checkout
   d = diff
   dd = diff --cached
@@ -10,39 +11,41 @@
   list = !bash -c 'ssh git@macke-0.inside.einsteinmedical.com list $* 2>/dev/null' -
   ll = log --stat --abbrev-commit
   m = merge
-  pr = !hub-pull-request
+  pr = !bash -c 'hub pull-request'
   p = push
   r = rebase
+  rs = !git reset --soft HEAD~1 && git reset
   s = status
   u = pull
   unstage = checkout HEAD
   ur = pull --rebase
   us = !git pull && git submodule init && git submodule update
+  wip = commit -am wip
 [color]
   diff = auto
   ui = true
 [core]
-	editor = vim
+  editor = vim
   excludesfile = ~/.gitignore
 [github]
   user = shuber
 [filter "lfs"]
-	clean = git-lfs clean %f
-	required = true
-	smudge = git-lfs smudge %f
+  clean = git-lfs clean %f
+  required = true
+  smudge = git-lfs smudge %f
 [filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
+  clean = git-media-clean %f
+  smudge = git-media-smudge %f
 [heroku]
-	account = personal
+  account = personal
 [push]
-	default = current
+  default = current
 [status]
-	submoduleSummary = true
+  submoduleSummary = true
 [user]
-	email = sean@lendinghome.com
-	name = Sean Huber
+  email = sean@lendinghome.com
+  name = Sean Huber
 [rerere]
-	enabled = true
+  enabled = true
 [diff]
-	tool = vim
+  tool = vim

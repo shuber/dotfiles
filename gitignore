@@ -36,6 +36,7 @@ ops/public/assets/product_explorer/product_explorer_bundle.js
 #########################
 .ruby-version
 .php-version
+*.gem
 
 ##############
 # Swap files #

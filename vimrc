@@ -18,21 +18,17 @@ Plugin 'shuber/vim-promiscuous'
 
 " Configure plugins
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'danro/rename.vim'
 Plugin 'danchoi/ri.vim'
 Plugin 'depuracao/vim-rdoc'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'kana/vim-textobj-entire'
 Plugin 'kana/vim-textobj-user'
 Plugin 'mattn/webapi-vim'
-Plugin 'rizzatti/dash.vim'
 Plugin 'tpope/vim-abolish'
-Plugin 'tpope/vim-cucumber'
 Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-eunuch'
-Plugin 'xolox/vim-misc'
+" Plugin 'xolox/vim-misc'
 Plugin 'tpope/vim-rbenv'
-Plugin 'xolox/vim-reload'
+" Plugin 'xolox/vim-reload'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-speeddating'
@@ -44,9 +40,10 @@ Plugin 'vim-scripts/matchit.zip'
 Plugin 'vim-scripts/tComment'
 
 " Searching
+Plugin 'kien/ctrlp.vim'
 Plugin 'ivalkeen/vim-ctrlp-tjump'
 Plugin 'junegunn/fzf'
-Plugin 'kien/ctrlp.vim'
+Plugin 'junegunn/fzf.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'rhysd/clever-f.vim'
 Plugin 'rking/ag.vim'
@@ -66,18 +63,19 @@ Plugin 'evanmiller/nginx-vim-syntax'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'jaxbot/semantic-highlight.vim'
 Plugin 'scrooloose/syntastic'
-Plugin 'kchmck/vim-coffee-script'
+" Plugin 'kchmck/vim-coffee-script'
 Plugin 'fatih/vim-go'
-Plugin 'suan/vim-instant-markdown'
+" Plugin 'suan/vim-instant-markdown'
 Plugin 'mxw/vim-jsx'
-Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'slim-template/vim-slim'
+" Plugin 'mustache/vim-mustache-handlebars'
+" Plugin 'slim-template/vim-slim'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'Quramy/tsuquyomi'
+Plugin 'killphi/vim-ebnf'
 
 " Theme
-Plugin 'edkolev/promptline.vim'
-Plugin 'edkolev/tmuxline.vim'
+" Plugin 'edkolev/promptline.vim'
+" Plugin 'edkolev/tmuxline.vim'
 Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 " Plugin 'bling/vim-airline'
 
@@ -191,6 +189,9 @@ nmap <leader><leader> <C-^>
 " Toggle the quickfix window
 nmap <script> <silent> <leader>q :call ToggleQuickfixList()<cr>:e<cr>
 
+" Expand tab, retab, and save
+" nmap <leader>w :set expandtab<cr>:retab<cr>:w<cr>
+
 " SQL
 nmap <leader>see vae<leader>se<c-o><c-w>=zz
 nmap <leader>sc :!bin/compile development<cr>:e development.sql<cr>vae<leader>se<c-o><c-o><c-w>=zz
@@ -214,6 +215,7 @@ cmap %% <c-r>=expand('%:p')<cr>
 
 " Don't require <Shift> when entering command mode
 nnoremap ; :
+cmap w; :set expandtab<cr>:retab<cr>:w<cr>
 
 " Easily edit configuration files
 nmap ,bash :e $HOME/.bashrc<cr>
