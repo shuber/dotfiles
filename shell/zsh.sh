@@ -11,7 +11,7 @@ if [ -n "${ZSH_VERSION}" ]; then
   autoload colors; colors
 
   # Setup autocompletion
-  export FPATH="/usr/share/zsh/functions:$FPATH"
+  export FPATH="/usr/share/zsh/functions:/usr/local/share/zsh/site-functions:$FPATH"
   autoload -U compinit; compinit
   autoload -U promptinit; promptinit
 
