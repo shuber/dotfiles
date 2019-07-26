@@ -68,10 +68,12 @@ Plugin 'fatih/vim-go'
 " Plugin 'suan/vim-instant-markdown'
 Plugin 'mxw/vim-jsx'
 " Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'rust-lang/rust.vim'
 " Plugin 'slim-template/vim-slim'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'Quramy/tsuquyomi'
 Plugin 'killphi/vim-ebnf'
+Plugin 'lifepillar/pgsql.vim'
 
 " Theme
 " Plugin 'edkolev/promptline.vim'
@@ -158,6 +160,9 @@ let g:syntastic_javascript_checkers = ["eslint"]
 let g:promiscuous_verbose = 1
 
 let g:gitgutter_max_signs = 1000
+
+" Highlight .sql files as pgsql by default
+let g:sql_type_default = 'pgsql'
 
 " Highlight current line number
 hi clear CursorLineNR
