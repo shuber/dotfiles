@@ -139,7 +139,8 @@ set lazyredraw
 set ttyfast
 
 " Read/write a file with encryption using `vim -x filename.ext`
-set cryptmethod=blowfish
+" TODO: nvim doesn't understand
+" set cryptmethod=blowfish
 
 " Use zsh as the default vim shell
 set shell=/usr/local/bin/zsh\ -l
@@ -268,6 +269,8 @@ vmap <C-c> <esc>
 " Move visual block
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+
+nmap <leader>f :FZF! -x<cr>
 
 "===============================================================================
 " Reference
