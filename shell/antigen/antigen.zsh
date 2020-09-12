@@ -473,7 +473,7 @@ antigen () {
   # Setup antigen's own completion.
   if -antigen-interactive-mode; then
     TRACE "Gonna create compdump file @ env-setup" COMPDUMP
-    autoload -Uz compinit
+    # autoload -Uz compinit
     compinit -d "$ANTIGEN_COMPDUMP"
     compdef _antigen antigen
   else
@@ -2033,7 +2033,7 @@ _antigen () {
     ;;
   esac
 }
-zmodload zsh/datetime
+# zmodload zsh/datetime
 ANTIGEN_DEBUG_LOG=${ANTIGEN_DEBUG_LOG:-${ADOTDIR:-$HOME/.antigen}/debug.log}
 LOG () {
   local PREFIX="[LOG][${EPOCHREALTIME}]"
