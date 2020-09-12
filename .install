@@ -12,7 +12,7 @@ if hash brew 2>/dev/null; then
     which $package || brew install $package
   done
 
-  packages=(autoenv readline ripgrep the_silver_searcher)
+  packages=(autoenv coreutils fd readline ripgrep the_silver_searcher)
 
   for package in "${packages[@]}"; do
     echo "==> Installing homebrew $package"
