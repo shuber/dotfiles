@@ -2,7 +2,7 @@
   b = branch
   c = commit -v
   ca = commit -av
-  cam = commit -a --amend --no-edit
+  cam = commit -a --amend --no-edit --no-verify
   co = checkout
   d = diff
   dd = diff --cached
