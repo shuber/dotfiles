@@ -16,6 +16,9 @@
 (define-key evil-normal-state-map (kbd "C-j") 'evil-window-next)
 (define-key evil-normal-state-map (kbd "C-k") 'evil-window-prev)
 
+;; Expand region
+(define-key evil-normal-state-map (kbd "C-e") 'er/expand-region)
+
 (add-hook 'eshell-mode-hook
           (lambda ()
             (define-key eshell-mode-map (kbd "C-j") 'evil-window-next)
