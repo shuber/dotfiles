@@ -44,6 +44,9 @@
     (+workspace/display)
     ))
 
+;; Reload doom
+(define-key evil-normal-state-map (kbd "\\r") 'doom/reload)
+
 ;; Open new workspace
 (define-key evil-normal-state-map (kbd "\\t") 'make-frame)
 
