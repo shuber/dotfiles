@@ -47,8 +47,11 @@
 ;; Reload doom
 (define-key evil-normal-state-map (kbd "\\r") 'doom/reload)
 
+;; Close window without quiting
+(define-key evil-normal-state-map (kbd "\\q") '+workspace/close-window-or-workspace)
+
 ;; Open new workspace
-(define-key evil-normal-state-map (kbd "\\t") 'make-frame)
+(define-key evil-normal-state-map (kbd "\\t") '+workspace/new)
 
 ;; Open new window buffer below
 (define-key evil-normal-state-map (kbd "\\s")
@@ -71,25 +74,6 @@
       (set-buffer-major-mode buffer)
       (switch-to-buffer buffer)
       )))
-
-(defgroup evil-textobj-entire nil
-  "Text object entire buffer for Evil"
-  :prefix "evil-textobj-entire-"
-  :group 'evil)
-
-(defcustom evil-textobj-entire-key "e"
-    "Key for evil-inner-entire"
-    :type 'string
-    :group 'evil-textobj-entire)
-
-(evil-define-text-object evil-entire-entire-buffer (count &optional beg end type)
-  "Select entire buffer"
-  (evil-range (point-min) (point-max)))
-
-(define-key evil-outer-text-objects-map evil-textobj-entire-key 'evil-entire-entire-buffer)
-(define-key evil-inner-text-objects-map evil-textobj-entire-key 'evil-entire-entire-buffer)
-
-(provide 'evil-textobj-entire)
 
 (add-hook 'evil-normal-state-entry-hook
   (lambda ()

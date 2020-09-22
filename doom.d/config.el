@@ -1,4 +1,10 @@
-;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
+;;; $DOOMDIR/config.el --- description -*- lexical-binding: t; -*-
+;;
+;;; Commentary:
+;;
+;; description
+;;
+;;; Code:
 
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
@@ -26,14 +32,17 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 (load! "tomorrow-night-theme")
+(defvar doom-theme)
 (setq doom-theme 'doom-tomorrow-night)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
+(defvar org-directory)
 (setq org-directory "~/org/")
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
+(defvar display-line-numbers-type)
 (setq display-line-numbers-type t)
 
 
@@ -59,4 +68,7 @@
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
 (load! "databases")
+(load! "evil-textobj-entire")
 (load! "mappings")
+
+;;; config.el ends here
