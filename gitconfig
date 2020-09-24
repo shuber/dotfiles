@@ -49,3 +49,5 @@
   enabled = true
 [diff]
   tool = vim
+[pull]
+	ff = only

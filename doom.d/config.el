@@ -31,9 +31,12 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(load! "tomorrow-night-theme")
 (defvar doom-theme)
+;; (load! "tomorrow-day-theme")
+(load! "tomorrow-night-theme")
 (setq doom-theme 'doom-tomorrow-night)
+;; (load! "shuber-theme")
+;; (setq doom-theme 'doom-shuber)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!

@@ -1,8 +1,8 @@
 ;;; mappings.el -*- lexical-binding: t; -*-
 ;;;
 
-;; example
-;;
+; example
+
 ;; (map! :leader
 ;;    (:prefix-map ("a" . "applications")
 ;;     (:prefix ("j" . "journal")
