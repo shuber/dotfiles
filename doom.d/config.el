@@ -67,8 +67,7 @@
 ;; they are implemented.
 
 ;; Start full screen
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
-(add-to-list 'initial-frame-alist '(fullscreen . maximized))
+(toggle-frame-fullscreen)
 
 (load! "databases")
 (load! "evil-textobj-entire")
